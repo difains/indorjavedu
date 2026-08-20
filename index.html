@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>고등부 찬양 인도자 양성 교육 [제1주차]</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    
+    <style>
+        @font-face {
+            font-family: 'Paperlogy';
+            font-weight: 300;
+            src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-3Light.woff2') format('woff2');
+        }
+        @font-face {
+            font-family: 'Paperlogy';
+            font-weight: 500;
+            src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-5Medium.woff2') format('woff2');
+        }
+        @font-face {
+            font-family: 'Paperlogy';
+            font-weight: 700;
+            src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-7Bold.woff2') format('woff2');
+        }
+        @font-face {
+            font-family: 'Paperlogy';
+            font-weight: 900;
+            src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-9Black.woff2') format('woff2');
+        }
+
+        body {
+            font-family: 'Paperlogy', sans-serif;
+            background-color: #000;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            color: #f3f4f6; /* Tailwind gray-100 */
+        }
+
+        /* 16:9 Aspect Ratio Container Logic */
+        .presentation-wrapper {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .slide-deck {
+            width: 100vw;
+            height: calc(100vw * 9 / 16);
+            max-height: 100vh;
+            max-width: calc(100vh * 16 / 9);
+            position: relative;
+            background: linear-gradient(135deg, #111827 0%, #000000 100%);
+            box-shadow: 0 0 50px rgba(255,255,255,0.05);
+            overflow: hidden;
+        }
+
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.5s ease-in-out;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 5% 8%;
+            box-sizing: border-box;
+        }
+
+        .slide.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        /* Utility classes for animations */
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+        .delay-400 { animation-delay: 0.4s; }
+        .delay-500 { animation-delay: 0.5s; }
+
+        /* 3D Canvas container */
+        #canvas-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+
+        .content-overlay {
+            z-index: 10;
+            position: relative;
+        }
+
+        /* Custom UI Elements */
+        .progress-bar {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 4px;
+            background-color: #3b82f6; /* Blue-500 */
+            transition: width 0.3s ease;
+            z-index: 50;
+        }
+
+        .nav-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            color: white;
+            padding: 20px;
+            cursor: pointer;
+            border-radius: 50%;
+            z-index: 50;
+            transition: background 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .nav-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        #prev-btn { left: 20px; }
+        #next-btn { right: 20px; }
+
+        /* Diagram Styles */
+        .diagram-box {
+            border: 2px solid #4b5563;
+            padding: 1rem;
+            text-align: center;
+            border-radius: 0.5rem;
+            background: rgba(31, 41, 55, 0.8);
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        .diagram-box.highlight {
+            border-color: #ef4444; /* red-500 */
+            color: #ef4444;
+        }
+        .diagram-box.white {
+            background: white;
+            color: black;
+            border-color: white;
+        }
+    </style>
+</head>
+<body>
+
+<div class="presentation-wrapper">
+    <div class="slide-deck" id="slide-deck">
+
+        <div class="slide active" id="slide-1">
+            <div class="text-center">
+                <h2 class="text-3xl md:text-4xl text-gray-400 font-medium mb-4 fade-in-up">고등부 찬양 인도자 양성 교육 [제1주차]</h2>
+                <h1 class="text-6xl md:text-8xl font-black text-white leading-tight fade-in-up delay-100">
+                    진짜 주인공은<br><span class="text-blue-500">네가 아니야</span>
+                </h1>
+            </div>
+        </div>
+
+        <div class="slide" id="slide-2">
+            <div class="flex flex-col h-full justify-center space-y-12">
+                <div class="flex justify-start fade-in-up">
+                    <div class="bg-gray-800 text-gray-300 p-6 rounded-2xl rounded-tl-none max-w-2xl text-2xl font-medium border border-gray-700 shadow-lg">
+                        "와, 내 목소리 진짜 좋다.<br>기타 치는 모습 완전 멋있겠지?<br>오늘 스포트라이트는 내 차지야..."
+                    </div>
+                </div>
+                
+                <div class="flex justify-end fade-in-up delay-200">
+                    <div class="bg-red-900/30 border border-red-500/50 text-white p-8 rounded-2xl rounded-tr-none max-w-3xl text-right shadow-2xl">
+                        <h3 class="text-4xl font-bold text-red-400 mb-4">착각하지 마라.</h3>
+                        <p class="text-2xl leading-relaxed">무대 위 스포트라이트를 받는 사람은 주인공이 아니다.<br>
+                        예배의 유일한 주인공은 <span class="text-yellow-400 font-black text-3xl">오직 예수 그리스도</span> 한 분뿐입니다.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide" id="slide-3">
+            <h2 class="text-4xl font-bold mb-10 text-center fade-in-up">우리가 박수받기를 갈망하는 이유</h2>
+            
+            <div class="flex flex-col space-y-8 w-full max-w-5xl mx-auto fade-in-up delay-100">
+                <!-- Row 1: Creation -->
+                <div class="flex items-center justify-between space-x-4">
+                    <div class="diagram-box flex-1">하나님</div>
+                    <div class="text-white text-3xl">➔</div>
+                    <div class="diagram-box flex-1">인간</div>
+                    <div class="text-white text-3xl">➔</div>
+                    <div class="diagram-box white flex-1">하나님의<br>영광을 찬송</div>
+                </div>
+
+                <!-- Row 2: Fall -->
+                <div class="flex items-center justify-between space-x-4 opacity-70 hover:opacity-100 transition-opacity">
+                    <div class="diagram-box flex-1 border-gray-600 text-gray-400">하나님</div>
+                    <div class="text-gray-500 text-3xl">➔</div>
+                    <div class="diagram-box flex-1 border-gray-600 text-gray-400">타락한 인간</div>
+                    <div class="text-red-500 text-3xl">➔</div>
+                    <div class="diagram-box highlight flex-1 relative">
+                        자기가 왕이 되어<br>영광을 차지함
+                        <div class="absolute -right-12 top-1/2 transform -translate-y-1/2 text-4xl">⚠️</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-12 text-center text-xl text-gray-300 fade-in-up delay-300 bg-gray-800/50 p-6 rounded-xl">
+                기독교 세계관의 첫 단추는 '창조와 타락'입니다.<br>
+                우리는 하나님의 영광을 위해 창조되었으나,<br>
+                <span class="text-red-400 font-bold">죄의 본질은 내가 하나님의 자리에 올라가 영광을 가로채려는 것입니다.</span>
+            </div>
+        </div>
+
+        <div class="slide" id="slide-4">
+            <h2 class="text-4xl font-bold mb-16 text-center text-yellow-500 fade-in-up">우상을 만들어내는 공장, 우리의 마음</h2>
+            
+            <div class="flex items-center justify-center space-x-8 mb-16 fade-in-up delay-100">
+                <div class="bg-gray-800 p-8 rounded-full shadow-lg border border-gray-700 text-2xl font-bold">🎤 마이크 / 찬양 인도</div>
+                <div class="text-4xl text-gray-500">➔</div>
+                <div class="bg-gray-800 p-8 rounded-full shadow-lg border border-gray-700 text-2xl font-bold">🖤 타락한 인간의 마음</div>
+                <div class="text-4xl text-red-500">➔</div>
+                <div class="bg-red-900/40 p-8 rounded-full shadow-lg border border-red-500 text-2xl font-bold text-red-200">👑 자기 자신을 향한 우상 숭배</div>
+            </div>
+
+            <div class="text-center space-y-8 fade-in-up delay-300">
+                <blockquote class="text-3xl italic text-gray-400 border-l-4 border-gray-500 pl-4 inline-block">
+                    “인간의 마음은 우상을 만드는 공장이다.”<br>
+                    <span class="text-xl text-gray-500 not-italic mt-2 block">- 존 칼빈, 『기독교 강요』</span>
+                </blockquote>
+                
+                <p class="text-2xl text-gray-200 bg-gray-800/80 p-6 rounded-lg inline-block mx-auto">
+                    마이크를 잡고 내 목소리로 사람들을 감동시키려 한다면?<br>
+                    그것은 하나님을 예배하는 것이 아니라, <span class="text-red-400 font-bold">자기 자신을 우상으로 예배하는 지옥의 길</span>입니다.
+                </p>
+            </div>
+        </div>
+
+        <div class="slide" id="slide-5">
+            <h2 class="text-4xl font-bold mb-10 text-center fade-in-up">당신은 무대 위의 가수가 아니라 <span class="text-blue-400">'다리(Bridge)'</span>다</h2>
+            
+            <div class="w-full max-w-5xl mx-auto overflow-hidden rounded-2xl shadow-2xl border border-gray-700 fade-in-up delay-100">
+                <table class="w-full text-left border-collapse">
+                    <thead>
+                        <tr class="bg-gray-800 text-2xl">
+                            <th class="p-6 border-b border-gray-700 w-1/4 text-center">정체성 (Identity)</th>
+                            <th class="p-6 border-b border-gray-700 w-1/3 text-center text-gray-400">가수 (Singer)</th>
+                            <th class="p-6 border-b border-gray-700 text-center text-blue-400">청지기 / 다리 (Bridge)</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-xl bg-gray-900/50">
+                        <tr>
+                            <td class="p-6 border-b border-gray-800 font-bold text-center bg-gray-800/30">목적 (Purpose)<br><span class="text-sm text-gray-500">시선 (Focus)</span></td>
+                            <td class="p-6 border-b border-gray-800 text-center text-gray-400">대중의 박수와 환호<br><span class="text-lg">나 자신과 나의 실력</span></td>
+                            <td class="p-6 border-b border-gray-800 text-center font-bold text-white">회중과 하나님과의 연결<br><span class="text-yellow-400 text-2xl">오직 예수 그리스도</span></td>
+                        </tr>
+                        <tr>
+                            <td class="p-6 font-bold text-center bg-gray-800/30">롤모델 (Model)</td>
+                            <td class="p-6 text-center text-gray-400">오디션 스타</td>
+                            <td class="p-6 text-center font-bold text-blue-300">세례요한</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p class="text-center text-2xl mt-12 text-gray-300 fade-in-up delay-300 font-medium bg-blue-900/20 p-4 rounded-lg inline-block mx-auto border border-blue-500/30">
+                우리는 세상의 오디션 프로그램에 나오는 퍼포머가 아닙니다.
+            </p>
+        </div>
+
+        <div class="slide p-0" id="slide-6">
+            <div id="canvas-container"></div>
+            <!-- Content overlay to sit on top of 3D canvas -->
+            <div class="content-overlay h-full w-full flex flex-col justify-between p-[5%_8%] pointer-events-none">
+                <div class="fade-in-up bg-black/60 p-6 rounded-2xl backdrop-blur-sm self-start border border-gray-700">
+                    <h2 class="text-4xl font-bold text-white mb-2">다리가 스스로 빛나려 할 때 일어나는 일</h2>
+                    <p class="text-xl text-gray-300">인도자가 자신을 드러내고 목적지가 되려 하는 순간, 하나님을 향한 다리는 무너집니다.</p>
+                </div>
+                
+                <div class="fade-in-up delay-300 bg-black/60 p-6 rounded-2xl backdrop-blur-sm self-end text-right border border-gray-700">
+                    <p class="text-2xl font-bold text-yellow-400">다리 위를 건너가는 분은 오직 예수 그리스도여야 합니다.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide" id="slide-7">
+            <div class="flex flex-col items-center justify-center h-full text-center">
+                <p class="text-2xl text-gray-400 mb-8 fade-in-up tracking-widest font-bold">개혁주의 찬양 인도자의 영원한 좌우명</p>
+                
+                <h1 class="text-6xl md:text-8xl font-black leading-tight fade-in-up delay-100 mb-12 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">
+                    그는 흥하여야 하겠고<br>
+                    나는 쇠하여야 하리라
+                </h1>
+                
+                <p class="text-3xl text-gray-300 fade-in-up delay-300 border-t border-gray-700 pt-8">
+                    요한복음 3장 30절 <span class="text-xl text-gray-500">(세례요한의 고백)</span>
+                </p>
+            </div>
+        </div>
+
+        <div class="slide" id="slide-8">
+            <h2 class="text-4xl font-bold mb-16 text-center fade-in-up">진정한 예배의 공식</h2>
+            
+            <div class="flex justify-center items-center space-x-12 mb-16 fade-in-up delay-100">
+                <div class="flex flex-col items-center">
+                    <div class="text-5xl font-black text-gray-500 mb-4">나</div>
+                    <div class="text-6xl text-red-500 animate-bounce">⬇️</div>
+                </div>
+                <div class="text-5xl font-bold text-gray-600">+</div>
+                <div class="flex flex-col items-center">
+                    <div class="text-5xl font-black text-yellow-400 mb-4">예수 그리스도</div>
+                    <div class="text-6xl text-blue-400 animate-bounce" style="animation-direction: reverse;">⬆️</div>
+                </div>
+                <div class="text-5xl font-bold text-gray-600">=</div>
+                <div class="bg-gradient-to-r from-blue-900 to-indigo-900 p-8 rounded-2xl border border-blue-500 shadow-2xl text-center">
+                    <div class="text-4xl font-bold text-white mb-2">그리스도의 말씀이</div>
+                    <div class="text-4xl font-bold text-white mb-4">풍성히 거하게</div>
+                    <div class="text-xl text-blue-300">(골 3:16)</div>
+                </div>
+            </div>
+
+            <div class="text-center text-2xl text-gray-300 fade-in-up delay-300 leading-relaxed bg-gray-800/40 p-8 rounded-xl max-w-4xl mx-auto">
+                내 안의 우상 공장을 멈추는 유일한 방법은 <span class="text-red-400 font-bold">'나의 쇠함'</span>입니다.<br>
+                내가 철저히 작아지고 사라질 때, 그 빈 공간에 <span class="text-yellow-400 font-bold">그리스도의 말씀</span>이 채워집니다.
+            </div>
+        </div>
+
+        <div class="slide" id="slide-9">
+            <div class="max-w-4xl mx-auto w-full">
+                <div class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg font-bold text-xl mb-6 fade-in-up">결단과 과제</div>
+                <h2 class="text-4xl font-black mb-10 fade-in-up delay-100 text-white">오직 주님만 드러나게 하소서</h2>
+                
+                <div class="bg-gray-800 border-l-8 border-blue-500 p-8 rounded-r-2xl shadow-xl fade-in-up delay-200 mb-8">
+                    <p class="text-2xl mb-4"><span class="text-gray-400 font-bold w-32 inline-block">제목:</span> 나의 영적 교만 회개와 인도자 청지기 결단문</p>
+                    <p class="text-2xl"><span class="text-gray-400 font-bold w-32 inline-block">분량 및 기한:</span> A4 용지 1페이지 내외 (다음 주 제출)</p>
+                </div>
+
+                <div class="bg-gray-900/80 border border-gray-700 p-8 rounded-2xl fade-in-up delay-300">
+                    <h3 class="text-2xl font-bold text-yellow-400 mb-6 flex items-center">
+                        <svg class="w-8 h-8 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>
+                        필수 포함 내용 (작성 가이드)
+                    </h3>
+                    <ul class="space-y-6 text-xl text-gray-200">
+                        <li class="flex items-start">
+                            <span class="bg-gray-700 text-white rounded-full w-8 h-8 flex items-center justify-center mr-4 flex-shrink-0 font-bold">1</span>
+                            <p>찬양 중 '사람의 시선'이나 '자기 만족'을 구했던 구체적인 순간 고백</p>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="bg-gray-700 text-white rounded-full w-8 h-8 flex items-center justify-center mr-4 flex-shrink-0 font-bold">2</span>
+                            <p>세례요한의 고백(요 3:30)에 비추어 볼 때, 내가 '쇠하여야 할' 구체적인 부분</p>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="bg-gray-700 text-white rounded-full w-8 h-8 flex items-center justify-center mr-4 flex-shrink-0 font-bold">3</span>
+                            <p>오직 예수님만 예배의 주인공이 되게 하겠다는 나의 구체적 다짐</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide" id="slide-10">
+            <div class="flex flex-col items-center justify-center h-full text-center">
+                <h1 class="text-5xl md:text-7xl font-black leading-tight fade-in-up text-white">
+                    내가 아니라 <span class="text-yellow-400">그리스도</span>가 드러날 때,
+                </h1>
+                <h1 class="text-5xl md:text-7xl font-black leading-tight fade-in-up delay-200 mt-6 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">
+                    비로소 진짜 예배가 시작됩니다.
+                </h1>
+                <div class="mt-20 w-32 h-1 bg-gray-700 mx-auto fade-in-up delay-400"></div>
+                <p class="mt-8 text-xl text-gray-500 fade-in-up delay-500">수고하셨습니다. 다음 주에 뵙겠습니다.</p>
+            </div>
+        </div>
+
+        <button id="prev-btn" class="nav-btn" aria-label="Previous Slide">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+        </button>
+        <button id="next-btn" class="nav-btn" aria-label="Next Slide">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+        </button>
+        <div id="progress-bar" class="progress-bar"></div>
+
+    </div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        
+        // --- Presentation Logic ---
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+        let currentSlide = 0;
+        const progressBar = document.getElementById('progress-bar');
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+
+        function updateSlide(direction) {
+            // Remove active class and reset animation classes
+            slides[currentSlide].classList.remove('active');
+            
+            // Calculate new slide index
+            if (direction === 'next' && currentSlide < totalSlides - 1) {
+                currentSlide++;
+            } else if (direction === 'prev' && currentSlide > 0) {
+                currentSlide--;
+            }
+            
+            // Add active class to new slide
+            slides[currentSlide].classList.add('active');
+            
+            // Re-trigger animations by removing and re-adding elements (simple hack for CSS animations)
+            const elements = slides[currentSlide].querySelectorAll('.fade-in-up');
+            elements.forEach(el => {
+                el.style.animation = 'none';
+                el.offsetHeight; // trigger reflow
+                el.style.animation = null;
+            });
+
+            // Update Progress Bar
+            const progress = ((currentSlide + 1) / totalSlides) * 100;
+            progressBar.style.width = `${progress}%`;
+
+            // Button visibility
+            prevBtn.style.opacity = currentSlide === 0 ? '0.3' : '1';
+            prevBtn.style.cursor = currentSlide === 0 ? 'default' : 'pointer';
+            
+            nextBtn.style.opacity = currentSlide === totalSlides - 1 ? '0.3' : '1';
+            nextBtn.style.cursor = currentSlide === totalSlides - 1 ? 'default' : 'pointer';
+        }
+
+        // Initialize first slide state
+        progressBar.style.width = `${(1 / totalSlides) * 100}%`;
+        prevBtn.style.opacity = '0.3';
+
+        // Event Listeners
+        nextBtn.addEventListener('click', () => updateSlide('next'));
+        prevBtn.addEventListener('click', () => updateSlide('prev'));
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === ' ') {
+                updateSlide('next');
+            } else if (e.key === 'ArrowLeft') {
+                updateSlide('prev');
+            }
+        });
+
+        // Click on right/left side of screen to navigate
+        document.getElementById('slide-deck').addEventListener('click', (e) => {
+            // Ignore if clicked on a button or link
+            if(e.target.closest('button')) return;
+            
+            const clickX = e.clientX;
+            const screenWidth = window.innerWidth;
+            if (clickX > screenWidth * 0.7) {
+                updateSlide('next');
+            } else if (clickX < screenWidth * 0.3) {
+                updateSlide('prev');
+            }
+        });
+
+
+        // --- Three.js 3D Scene (Collapsing Bridge) ---
+        // Setup only runs once
+        const init3DScene = () => {
+            const container = document.getElementById('canvas-container');
+            const scene = new THREE.Scene();
+            // Fog to fade into background
+            scene.fog = new THREE.FogExp2(0x111827, 0.03);
+
+            // Camera setup
+            const camera = new THREE.PerspectiveCamera(45, container.clientWidth / container.clientHeight, 0.1, 1000);
+            camera.position.set(0, 10, 30);
+            camera.lookAt(0, 0, 0);
+
+            const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+            renderer.setSize(container.clientWidth, container.clientHeight);
+            renderer.setClearColor(0x000000, 0); // transparent bg
+            container.appendChild(renderer.domElement);
+
+            // Lighting
+            const ambientLight = new THREE.AmbientLight(0x404040, 2); // Soft white light
+            scene.add(ambientLight);
+
+            const dirLight = new THREE.DirectionalLight(0xffffff, 1);
+            dirLight.position.set(10, 20, 10);
+            scene.add(dirLight);
+
+            const holyLight = new THREE.PointLight(0xfffae6, 3, 50);
+            holyLight.position.set(12, 8, 0);
+            scene.add(holyLight);
+
+            // --- Geometries and Materials ---
+            const cliffMaterial = new THREE.MeshStandardMaterial({ color: 0x374151, roughness: 0.8 }); // gray-700
+            
+            // Left Cliff
+            const leftCliffGeom = new THREE.BoxGeometry(15, 20, 15);
+            const leftCliff = new THREE.Mesh(leftCliffGeom, cliffMaterial);
+            leftCliff.position.set(-15, -8, 0);
+            scene.add(leftCliff);
+
+            // Right Cliff
+            const rightCliffGeom = new THREE.BoxGeometry(15, 20, 15);
+            const rightCliff = new THREE.Mesh(rightCliffGeom, cliffMaterial);
+            rightCliff.position.set(15, -8, 0);
+            scene.add(rightCliff);
+
+            // The Cross (Right side)
+            const crossGroup = new THREE.Group();
+            const crossMaterial = new THREE.MeshStandardMaterial({ color: 0xffffff, emissive: 0xffffff, emissiveIntensity: 0.8 });
+            const vBeam = new THREE.Mesh(new THREE.BoxGeometry(1, 8, 1), crossMaterial);
+            const hBeam = new THREE.Mesh(new THREE.BoxGeometry(5, 1, 1), crossMaterial);
+            hBeam.position.set(0, 2, 0);
+            crossGroup.add(vBeam);
+            crossGroup.add(hBeam);
+            crossGroup.position.set(12, 6, 0);
+            scene.add(crossGroup);
+
+            // Congregation (Left side)
+            const peopleGroup = new THREE.Group();
+            const personGeom = new THREE.CylinderGeometry(0.5, 0.5, 2, 8);
+            const personMat = new THREE.MeshStandardMaterial({ color: 0xd1d5db }); // gray-300
+            for(let i=0; i<8; i++) {
+                const person = new THREE.Mesh(personGeom, personMat);
+                person.position.set(-11 - Math.random()*3, 3, -2 + Math.random()*4);
+                peopleGroup.add(person);
+            }
+            scene.add(peopleGroup);
+
+            // The Broken Bridge (Center) - Representing the worship leader who collapsed
+            const bridgeMat = new THREE.MeshStandardMaterial({ color: 0xef4444, emissive: 0x7f1d1d, emissiveIntensity: 0.5 }); // Red
+            const bridgePartGeom = new THREE.BoxGeometry(10, 0.5, 3);
+            
+            const bridgeLeft = new THREE.Mesh(bridgePartGeom, bridgeMat);
+            bridgeLeft.position.set(-5, 0, 0);
+            bridgeLeft.rotation.z = -Math.PI / 6; // Angled down
+            
+            const bridgeRight = new THREE.Mesh(bridgePartGeom, bridgeMat);
+            bridgeRight.position.set(5, 0, 0);
+            bridgeRight.rotation.z = Math.PI / 6; // Angled down
+
+            scene.add(bridgeLeft);
+            scene.add(bridgeRight);
+
+            // Falling pieces (representing the collapse)
+            const fallingPieces = [];
+            const pieceGeom = new THREE.BoxGeometry(0.8, 1.5, 0.8);
+            for(let i=0; i<5; i++) {
+                const p = new THREE.Mesh(pieceGeom, bridgeMat);
+                p.position.set((Math.random() - 0.5) * 8, -2 - Math.random() * 10, (Math.random() - 0.5) * 4);
+                p.userData = {
+                    velocity: -0.05 - Math.random() * 0.05,
+                    rotSpeedX: Math.random() * 0.1,
+                    rotSpeedZ: Math.random() * 0.1
+                };
+                scene.add(p);
+                fallingPieces.push(p);
+            }
+
+            // Animation Loop
+            const clock = new THREE.Clock();
+
+            const animate = () => {
+                requestAnimationFrame(animate);
+                
+                const time = clock.getElapsedTime();
+
+                // Gentle camera sway
+                camera.position.x = Math.sin(time * 0.5) * 3;
+                camera.lookAt(0, 0, 0);
+
+                // Make the cross pulsate slightly
+                crossMaterial.emissiveIntensity = 0.7 + Math.sin(time * 2) * 0.2;
+
+                // Animate falling pieces
+                fallingPieces.forEach(p => {
+                    p.position.y += p.userData.velocity;
+                    p.rotation.x += p.userData.rotSpeedX;
+                    p.rotation.z += p.userData.rotSpeedZ;
+
+                    // Reset if too low
+                    if(p.position.y < -20) {
+                        p.position.y = 2;
+                        p.position.x = (Math.random() - 0.5) * 8;
+                    }
+                });
+
+                renderer.render(scene, camera);
+            };
+
+            animate();
+
+            // Handle resize
+            window.addEventListener('resize', () => {
+                if(container.clientWidth > 0) {
+                    camera.aspect = container.clientWidth / container.clientHeight;
+                    camera.updateProjectionMatrix();
+                    renderer.setSize(container.clientWidth, container.clientHeight);
+                }
+            });
+            
+            // Force initial resize to ensure fit
+            setTimeout(() => {
+                window.dispatchEvent(new Event('resize'));
+            }, 100);
+        };
+
+        // Initialize 3D scene on load
+        window.onload = function() {
+            init3DScene();
+        }
+
+    });
+</script>
+</body>
+</html>

@@ -29,6 +29,11 @@
             src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-9Black.woff2') format('woff2');
         }
 
+        html {
+            /* 16:9 비율에 맞춰 모든 rem 단위를 유동적으로 스케일링 (모바일~60인치 모니터 완벽 대응) */
+            font-size: calc(min(100vw, 100vh * 16 / 9) / 80);
+        }
+
         body {
             font-family: 'Paperlogy', sans-serif;
             background-color: #000;
@@ -54,7 +59,7 @@
             max-width: calc(100vh * 16 / 9);
             position: relative;
             background: linear-gradient(135deg, #111827 0%, #000000 100%);
-            box-shadow: 0 0 50px rgba(255,255,255,0.05);
+            box-shadow: 0 0 3rem rgba(255,255,255,0.05);
             overflow: hidden;
         }
 
@@ -83,7 +88,7 @@
         .fade-in-up {
             animation: fadeInUp 0.8s ease-out forwards;
             opacity: 0;
-            transform: translateY(20px);
+            transform: translateY(1.25rem);
         }
 
         @keyframes fadeInUp {
@@ -119,7 +124,7 @@
             position: absolute;
             bottom: 0;
             left: 0;
-            height: 4px;
+            height: 0.25rem;
             background-color: #3b82f6; /* Blue-500 */
             transition: width 0.3s ease;
             z-index: 50;
@@ -132,7 +137,7 @@
             background: rgba(255, 255, 255, 0.1);
             border: none;
             color: white;
-            padding: 20px;
+            padding: 1.25rem;
             cursor: pointer;
             border-radius: 50%;
             z-index: 50;
@@ -146,8 +151,8 @@
             background: rgba(255, 255, 255, 0.3);
         }
 
-        #prev-btn { left: 20px; }
-        #next-btn { right: 20px; }
+        #prev-btn { left: 1.25rem; }
+        #next-btn { right: 1.25rem; }
 
         /* Diagram Styles */
         .diagram-box {
@@ -168,6 +173,19 @@
             color: black;
             border-color: white;
         }
+
+        /* Bible Verse Modal Trigger */
+        .verse-trigger {
+            cursor: pointer;
+            text-decoration: underline;
+            text-decoration-style: dashed;
+            text-underline-offset: 6px;
+            transition: color 0.2s, text-decoration-color 0.2s;
+        }
+        .verse-trigger:hover {
+            color: #60a5fa; /* Tailwind blue-400 */
+            text-decoration-color: #60a5fa;
+        }
     </style>
 </head>
 <body>
@@ -176,11 +194,11 @@
     <div class="slide-deck" id="slide-deck">
 
         <div class="slide active" id="slide-1">
-            <div class="text-center">
-                <h2 class="text-3xl md:text-4xl text-gray-400 font-medium mb-4 fade-in-up">고등부 찬양 인도자 양성 교육 [제1주차]</h2>
-                <h1 class="text-6xl md:text-8xl font-black text-white leading-tight fade-in-up delay-100">
+            <div class="flex flex-col items-center justify-center h-full relative">
+                <h1 class="text-8xl font-black text-white leading-tight fade-in-up delay-100 text-center">
                     진짜 주인공은<br><span class="text-blue-500">네가 아니야</span>
                 </h1>
+                <h2 class="text-4xl text-gray-400 font-medium fade-in-up absolute bottom-10 text-center">고등부 찬양 인도자 양성 교육 [제1주차]</h2>
             </div>
         </div>
 
@@ -254,7 +272,7 @@
                 
                 <p class="text-2xl text-gray-200 bg-gray-800/80 p-6 rounded-lg inline-block mx-auto">
                     마이크를 잡고 내 목소리로 사람들을 감동시키려 한다면?<br>
-                    그것은 하나님을 예배하는 것이 아니라, <span class="text-red-400 font-bold">자기 자신을 우상으로 예배하는 지옥의 길</span>입니다.
+                    그것은 하나님을 예배하는 것이 아니라, <span class="text-red-400 font-bold">자기 자신을 우상으로 예배하는 길</span>입니다.
                 </p>
             </div>
         </div>
@@ -310,13 +328,13 @@
             <div class="flex flex-col items-center justify-center h-full text-center">
                 <p class="text-2xl text-gray-400 mb-8 fade-in-up tracking-widest font-bold">개혁주의 찬양 인도자의 영원한 좌우명</p>
                 
-                <h1 class="text-6xl md:text-8xl font-black leading-tight fade-in-up delay-100 mb-12 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">
+                <h1 class="text-8xl font-black leading-tight fade-in-up delay-100 mb-12 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">
                     그는 흥하여야 하겠고<br>
                     나는 쇠하여야 하리라
                 </h1>
                 
                 <p class="text-3xl text-gray-300 fade-in-up delay-300 border-t border-gray-700 pt-8">
-                    요한복음 3장 30절 <span class="text-xl text-gray-500">(세례요한의 고백)</span>
+                    <span class="verse-trigger" data-verse="john3_30">요한복음 3장 30절</span> <span class="text-xl text-gray-500">(세례요한의 고백)</span>
                 </p>
             </div>
         </div>
@@ -338,7 +356,7 @@
                 <div class="bg-gradient-to-r from-blue-900 to-indigo-900 p-8 rounded-2xl border border-blue-500 shadow-2xl text-center">
                     <div class="text-4xl font-bold text-white mb-2">그리스도의 말씀이</div>
                     <div class="text-4xl font-bold text-white mb-4">풍성히 거하게</div>
-                    <div class="text-xl text-blue-300">(골 3:16)</div>
+                    <div class="text-xl text-blue-300">(<span class="verse-trigger" data-verse="col3_16">골 3:16</span>)</div>
                 </div>
             </div>
 
@@ -355,7 +373,7 @@
                 
                 <div class="bg-gray-800 border-l-8 border-blue-500 p-8 rounded-r-2xl shadow-xl fade-in-up delay-200 mb-8">
                     <p class="text-2xl mb-4"><span class="text-gray-400 font-bold w-32 inline-block">제목:</span> 나의 영적 교만 회개와 인도자 청지기 결단문</p>
-                    <p class="text-2xl"><span class="text-gray-400 font-bold w-32 inline-block">분량 및 기한:</span> A4 용지 1페이지 내외 (다음 주 제출)</p>
+                    <p class="text-2xl"><span class="text-gray-400 font-bold w-32 inline-block">분량 및 기한:</span> A4 용지 1페이지 내외 (지금 작성)</p>
                 </div>
 
                 <div class="bg-gray-900/80 border border-gray-700 p-8 rounded-2xl fade-in-up delay-300">
@@ -370,7 +388,7 @@
                         </li>
                         <li class="flex items-start">
                             <span class="bg-gray-700 text-white rounded-full w-8 h-8 flex items-center justify-center mr-4 flex-shrink-0 font-bold">2</span>
-                            <p>세례요한의 고백(요 3:30)에 비추어 볼 때, 내가 '쇠하여야 할' 구체적인 부분</p>
+                            <p>세례요한의 고백(<span class="verse-trigger" data-verse="john3_30">요 3:30</span>)에 비추어 볼 때, 내가 '쇠하여야 할' 구체적인 부분</p>
                         </li>
                         <li class="flex items-start">
                             <span class="bg-gray-700 text-white rounded-full w-8 h-8 flex items-center justify-center mr-4 flex-shrink-0 font-bold">3</span>
@@ -383,14 +401,13 @@
 
         <div class="slide" id="slide-10">
             <div class="flex flex-col items-center justify-center h-full text-center">
-                <h1 class="text-5xl md:text-7xl font-black leading-tight fade-in-up text-white">
+                <h1 class="text-7xl font-black leading-tight fade-in-up text-white">
                     내가 아니라 <span class="text-yellow-400">그리스도</span>가 드러날 때,
                 </h1>
-                <h1 class="text-5xl md:text-7xl font-black leading-tight fade-in-up delay-200 mt-6 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">
+                <h1 class="text-7xl font-black leading-tight fade-in-up delay-200 mt-6 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">
                     비로소 진짜 예배가 시작됩니다.
                 </h1>
                 <div class="mt-20 w-32 h-1 bg-gray-700 mx-auto fade-in-up delay-400"></div>
-                <p class="mt-8 text-xl text-gray-500 fade-in-up delay-500">수고하셨습니다. 다음 주에 뵙겠습니다.</p>
             </div>
         </div>
 
@@ -401,6 +418,19 @@
             <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
         </button>
         <div id="progress-bar" class="progress-bar"></div>
+        <!-- Page Indicator 추가 -->
+        <div id="page-indicator" class="absolute top-[5%] right-[5%] text-gray-400 font-bold text-xl z-50 bg-gray-900/60 px-5 py-2 rounded-full border border-gray-700 backdrop-blur-sm shadow-lg tracking-widest"></div>
+
+        <!-- Bible Verse Modal -->
+        <div id="bible-modal" class="fixed inset-0 z-[100] bg-black/80 flex items-center justify-center hidden backdrop-blur-sm opacity-0 transition-opacity duration-300">
+            <div class="bg-gray-900 border border-gray-700 p-8 md:p-12 rounded-2xl max-w-3xl w-full mx-4 shadow-2xl transform scale-95 transition-transform duration-300 text-left">
+                <h3 id="modal-verse-title" class="text-3xl font-bold text-yellow-400 mb-6 border-b border-gray-700 pb-4"></h3>
+                <p id="modal-verse-content" class="text-2xl text-gray-200 leading-relaxed font-serif whitespace-pre-line"></p>
+                <div class="mt-10 text-right">
+                    <button id="modal-close-btn" class="bg-blue-600 hover:bg-blue-500 text-white px-8 py-3 rounded-lg text-xl font-bold transition-colors shadow-lg">닫기</button>
+                </div>
+            </div>
+        </div>
 
     </div>
 </div>
@@ -415,6 +445,7 @@
         const progressBar = document.getElementById('progress-bar');
         const prevBtn = document.getElementById('prev-btn');
         const nextBtn = document.getElementById('next-btn');
+        const pageIndicator = document.getElementById('page-indicator'); // 인디케이터 변수 추가
 
         function updateSlide(direction) {
             // Remove active class and reset animation classes
@@ -442,6 +473,9 @@
             const progress = ((currentSlide + 1) / totalSlides) * 100;
             progressBar.style.width = `${progress}%`;
 
+            // Update Page Indicator
+            pageIndicator.innerText = `${currentSlide + 1} / ${totalSlides}`;
+
             // Button visibility
             prevBtn.style.opacity = currentSlide === 0 ? '0.3' : '1';
             prevBtn.style.cursor = currentSlide === 0 ? 'default' : 'pointer';
@@ -453,6 +487,7 @@
         // Initialize first slide state
         progressBar.style.width = `${(1 / totalSlides) * 100}%`;
         prevBtn.style.opacity = '0.3';
+        pageIndicator.innerText = `1 / ${totalSlides}`; // 초기 페이지 번호 렌더링
 
         // Event Listeners
         nextBtn.addEventListener('click', () => updateSlide('next'));
@@ -468,8 +503,8 @@
 
         // Click on right/left side of screen to navigate
         document.getElementById('slide-deck').addEventListener('click', (e) => {
-            // Ignore if clicked on a button or link
-            if(e.target.closest('button')) return;
+            // Ignore if clicked on a button, link or verse trigger
+            if(e.target.closest('button') || e.target.closest('a') || e.target.closest('.verse-trigger')) return;
             
             const clickX = e.clientX;
             const screenWidth = window.innerWidth;
@@ -495,6 +530,7 @@
             camera.lookAt(0, 0, 0);
 
             const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+            renderer.setPixelRatio(window.devicePixelRatio); /* 고해상도 모니터 및 모바일 대응 */
             renderer.setSize(container.clientWidth, container.clientHeight);
             renderer.setClearColor(0x000000, 0); // transparent bg
             container.appendChild(renderer.domElement);
@@ -514,13 +550,34 @@
             // --- Geometries and Materials ---
             const cliffMaterial = new THREE.MeshStandardMaterial({ color: 0x374151, roughness: 0.8 }); // gray-700
             
-            // Left Cliff
+            // Left Cliff (회중이 서 있는 반석)
             const leftCliffGeom = new THREE.BoxGeometry(15, 20, 15);
             const leftCliff = new THREE.Mesh(leftCliffGeom, cliffMaterial);
             leftCliff.position.set(-15, -8, 0);
             scene.add(leftCliff);
 
-            // Right Cliff
+            // 회중 묘사 (반석 위의 사람들)
+            const congregationGroup = new THREE.Group();
+            const personGeom = new THREE.CylinderGeometry(0.4, 0.4, 1.5, 8);
+            const headGeom = new THREE.SphereGeometry(0.4, 8, 8);
+            const personMat = new THREE.MeshStandardMaterial({ color: 0x9ca3af, roughness: 0.7 });
+            
+            for(let i=0; i<7; i++) {
+                const px = -12 - Math.random() * 4;
+                const pz = (Math.random() - 0.5) * 6;
+                
+                const body = new THREE.Mesh(personGeom, personMat);
+                body.position.set(px, 2.75, pz);
+                
+                const head = new THREE.Mesh(headGeom, personMat);
+                head.position.set(px, 3.9, pz);
+                
+                congregationGroup.add(body);
+                congregationGroup.add(head);
+            }
+            scene.add(congregationGroup);
+
+            // Right Cliff (오른쪽은 말씀과 그리스도의 굳건한 반석)
             const rightCliffGeom = new THREE.BoxGeometry(15, 20, 15);
             const rightCliff = new THREE.Mesh(rightCliffGeom, cliffMaterial);
             rightCliff.position.set(15, -8, 0);
@@ -536,17 +593,6 @@
             crossGroup.add(hBeam);
             crossGroup.position.set(12, 6, 0);
             scene.add(crossGroup);
-
-            // Congregation (Left side)
-            const peopleGroup = new THREE.Group();
-            const personGeom = new THREE.CylinderGeometry(0.5, 0.5, 2, 8);
-            const personMat = new THREE.MeshStandardMaterial({ color: 0xd1d5db }); // gray-300
-            for(let i=0; i<8; i++) {
-                const person = new THREE.Mesh(personGeom, personMat);
-                person.position.set(-11 - Math.random()*3, 3, -2 + Math.random()*4);
-                peopleGroup.add(person);
-            }
-            scene.add(peopleGroup);
 
             // The Broken Bridge (Center) - Representing the worship leader who collapsed
             const bridgeMat = new THREE.MeshStandardMaterial({ color: 0xef4444, emissive: 0x7f1d1d, emissiveIntensity: 0.5 }); // Red
@@ -630,6 +676,45 @@
         window.onload = function() {
             init3DScene();
         }
+
+        // --- Modal Logic ---
+        const bibleData = {
+            'john3_30': { title: '요한복음 3장 30절', text: '그는 흥하여야 하겠고 나는 쇠하여야 하리라 하니라' },
+            'col3_16': { title: '골로새서 3장 16절', text: '그리스도의 말씀이 너희 속에 풍성히 거하여 모든 지혜로 피차 가르치며 권면하고 시와 찬송과 신령한 노래를 부르며 감사하는 마음으로 하나님을 찬양하고' }
+        };
+
+        const modal = document.getElementById('bible-modal');
+        const modalTitle = document.getElementById('modal-verse-title');
+        const modalContent = document.getElementById('modal-verse-content');
+        const closeBtn = document.getElementById('modal-close-btn');
+
+        document.querySelectorAll('.verse-trigger').forEach(trigger => {
+            trigger.addEventListener('click', (e) => {
+                const verseKey = e.currentTarget.getAttribute('data-verse');
+                if (bibleData[verseKey]) {
+                    modalTitle.innerText = bibleData[verseKey].title;
+                    modalContent.innerText = bibleData[verseKey].text;
+                    modal.classList.remove('hidden');
+                    setTimeout(() => {
+                        modal.classList.remove('opacity-0');
+                        modal.querySelector('div').classList.remove('scale-95');
+                    }, 10);
+                }
+            });
+        });
+
+        const closeModal = () => {
+            modal.classList.add('opacity-0');
+            modal.querySelector('div').classList.add('scale-95');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 300);
+        };
+
+        closeBtn.addEventListener('click', closeModal);
+        modal.addEventListener('click', (e) => {
+            if(e.target === modal) closeModal(); // Close if clicked outside the box
+        });
 
     });
 </script>

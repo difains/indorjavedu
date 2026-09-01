@@ -270,7 +270,8 @@
         display: none;
         flex-direction: column;
         justify-content: center;
-        padding: 2% 4%;
+        align-items: center;
+        padding: 2.2cqw 4cqw;
         box-sizing: border-box;
         opacity: 0;
         transform: scale(0.97) translateY(1.2rem);
@@ -286,14 +287,14 @@
     }
 
     /* WEEK 2 CONTAINER QUERY & BENTO BOX RULES */
-    [data-week="week2"] h1 { font-size: 4cqw; font-weight: 800; line-height: 1.2; letter-spacing: -0.02em; margin-bottom: 0.6cqw; }
-    [data-week="week2"] h2 { font-size: 2.2cqw; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 1cqw; display: flex; align-items: center; gap: 0.6cqw; color: #f8fafc; }
-    [data-week="week2"] h2::before { content: ''; display: inline-block; width: 0.45cqw; height: 2cqw; background: #3b82f6; border-radius: 0.4cqw; flex-shrink: 0; }
-    [data-week="week2"] h3 { font-size: 1.5cqw; font-weight: 800; color: #f8fafc; margin-bottom: 0.4cqw; }
-    [data-week="week2"] p, [data-week="week2"] li { font-size: 1.1cqw; line-height: 1.4; font-weight: 400; color: #94a3b8; margin-bottom: 0.4cqw; word-break: keep-all; }
+    [data-week="week2"] h1 { font-size: 3.6cqw; font-weight: 800; line-height: 1.2; letter-spacing: -0.02em; margin-bottom: 0.6cqw; text-align: center; }
+    [data-week="week2"] h2 { font-size: 2.1cqw; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 0.8cqw; display: flex; align-items: center; justify-content: center; gap: 0.6cqw; color: #f8fafc; text-align: center; }
+    [data-week="week2"] h2::before { display: none; }
+    [data-week="week2"] h3 { font-size: 1.35cqw; font-weight: 800; color: #f8fafc; margin-bottom: 0.3cqw; }
+    [data-week="week2"] p, [data-week="week2"] li { font-size: 1.05cqw; line-height: 1.4; font-weight: 400; color: #94a3b8; margin-bottom: 0.3cqw; word-break: keep-all; }
     [data-week="week2"] b, [data-week="week2"] strong { font-weight: 800; color: #f8fafc; }
 
-    .bento-grid { display: grid; gap: 1cqw; height: 100%; grid-template-rows: minmax(0, 1fr); }
+    .bento-grid { display: grid; gap: 1cqw; width: 100%; max-width: 58cqw; margin: 0 auto; }
     .bento-card {
         background: rgba(30, 41, 59, 0.65);
         backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
@@ -302,8 +303,8 @@
         display: flex; flex-direction: column; position: relative; overflow: hidden;
         box-shadow: 0 0.6cqw 1.2cqw rgba(0,0,0,0.25);
     }
-    .flex-center-all { display: flex; flex-direction: column; justify-content: center; align-items: center; height: calc(100% - 3.8cqw); width: 100%; gap: 1cqw; }
-    .grid-auto-height { display: grid; gap: 1cqw; width: 100%; }
+    .flex-center-all { display: flex; flex-direction: column; justify-content: center; align-items: center; width: 100%; max-width: 58cqw; margin: 0 auto; gap: 0.8cqw; }
+    .grid-auto-height { display: grid; gap: 1cqw; width: 100%; max-width: 58cqw; margin: 0 auto; }
 
     .highlight { color: #3b82f6; font-weight: 800; }
     .tag { padding: 0.2cqw 0.7cqw; font-weight: 800; border-radius: 2cqw; font-size: 0.95cqw; display: inline-block; }
@@ -610,204 +611,376 @@
         <main id="slide-viewport">
 
 <!-- [WEEK 1 - SLIDE 1] -->
-<div class="slide" data-week="week1" id="slide-1">
-<div class="flex flex-col items-center justify-center h-full relative">
-<h1 class="text-8xl font-black text-white leading-tight fade-in-up delay-100 text-center">
-                    진짜 주인공은<br/><span class="shimmer-text font-black">네가 아니야</span>
-</h1>
-<h2 class="text-4xl text-gray-400 font-medium fade-in-up absolute bottom-10 text-center">고등부 찬양 인도자 양성 교육 [제1주차]</h2>
+<div class="slide" data-week="week1">
+<div class="w-full max-w-4xl mx-auto flex flex-col justify-center items-center text-center my-auto">
+    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-600/30 text-blue-300 border border-blue-500/40 text-xs font-bold mb-3">
+        ✨ 고등부 찬양 인도자 양성 교육 제1주차
+    </div>
+    <h1 class="text-5xl font-black mb-3 tracking-tight text-white">
+        진짜 주인공은 <span class="shimmer-text font-black">네가 아니야</span>
+    </h1>
+    <p class="text-xl text-slate-300 font-medium mb-6 max-w-2xl mx-auto">
+        예배의 본질과 찬양 인도자의 영적 정체성
+    </p>
+    <div class="grid grid-cols-3 gap-4 w-full max-w-3xl mx-auto">
+        <div class="bg-slate-800/80 p-4 rounded-xl border border-slate-700">
+            <div class="text-blue-400 font-bold text-xs mb-1">SECTION 01</div>
+            <div class="text-white font-bold text-sm">인도자의 정체성</div>
+            <div class="text-[11px] text-slate-400 mt-0.5">가수가 아닌 청지기</div>
+        </div>
+        <div class="bg-slate-800/80 p-4 rounded-xl border border-slate-700">
+            <div class="text-emerald-400 font-bold text-xs mb-1">SECTION 02</div>
+            <div class="text-white font-bold text-sm">우상 숭배의 본질</div>
+            <div class="text-[11px] text-slate-400 mt-0.5">영광을 가로채는 죄</div>
+        </div>
+        <div class="bg-slate-800/80 p-4 rounded-xl border border-slate-700">
+            <div class="text-amber-400 font-bold text-xs mb-1">SECTION 03</div>
+            <div class="text-white font-bold text-sm">세례요한의 고백</div>
+            <div class="text-[11px] text-slate-400 mt-0.5">그는 흥하고 나는 쇠함</div>
+        </div>
+    </div>
 </div>
 </div>
 <!-- [WEEK 1 - SLIDE 2] -->
-<div class="slide" data-week="week1" id="slide-2">
-<div class="flex flex-col h-full justify-center space-y-12">
-<div class="flex justify-start fade-in-up">
-<div class="bg-gray-800 text-gray-300 p-6 rounded-2xl rounded-tl-none max-w-2xl text-2xl font-medium border border-gray-700 shadow-lg">
-                        "와, 내 목소리 진짜 좋다.<br/>기타 치는 모습 완전 멋있겠지?<br/>오늘 스포트라이트는 내 차지야..."
-                    </div>
-</div>
-<div class="flex justify-end fade-in-up delay-200">
-<div class="bg-red-900/30 border border-red-500/50 text-white p-8 rounded-2xl rounded-tr-none max-w-3xl text-right shadow-2xl">
-<h3 class="text-4xl font-bold text-red-400 mb-4"><span class="shimmer-red font-black">착각하지 마라.</span></h3>
-<p class="text-2xl leading-relaxed">무대 위 스포트라이트를 받는 사람은 주인공이 아니다.<br/>
-                        예배의 유일한 주인공은 <span class="text-yellow-400 font-black text-3xl"><span class="shimmer-gold font-bold">오직 예수 그리스도</span></span> 한 분뿐입니다.</p>
-</div>
-</div>
+<div class="slide" data-week="week1">
+<div class="w-full max-w-5xl mx-auto flex flex-col justify-center items-center text-center my-auto">
+    <div class="inline-flex items-center gap-2 px-3 py-0.5 rounded-full bg-red-600/20 text-red-300 border border-red-500/40 text-xs font-bold mb-2">
+        ⚠️ SPIRITUAL WARNING
+    </div>
+    <h2 class="text-3xl font-extrabold text-white mb-1">
+        찬양 인도자의 가장 치명적인 착각
+    </h2>
+    <p class="text-xs text-slate-400 mb-4">무대 위에서 우리는 누구를 의식하고 있는가?</p>
+
+    <div class="grid grid-cols-2 gap-5 w-full items-stretch mb-3 text-left">
+        <div class="bg-slate-800/80 p-5 rounded-xl border border-slate-700 flex flex-col justify-between">
+            <div>
+                <span class="px-2 py-0.5 rounded bg-red-500/20 text-red-400 text-xs font-bold mb-2 inline-block">❌ 은밀한 자아도취 (독백)</span>
+                <p class="text-base text-slate-200 font-medium leading-relaxed mt-1">
+                    "와, 오늘 내 목소리 톤 진짜 좋다.<br>
+                    기타 치는 모습 완전 멋있겠지?<br>
+                    오늘 스포트라이트는 내 차지야..."
+                </p>
+            </div>
+            <div class="text-xs text-slate-500 pt-2 border-t border-slate-700">인간의 시선과 자기 만족에 갇힌 상태</div>
+        </div>
+
+        <div class="bg-slate-800/90 p-5 rounded-xl border-2 border-red-500/80 alert-glow flex flex-col justify-between">
+            <div>
+                <span class="px-2 py-0.5 rounded bg-amber-500/20 text-yellow-400 text-xs font-bold mb-2 inline-block">⚡ 성경적 진실 (선포)</span>
+                <h3 class="text-2xl font-black shimmer-red mb-1">착각하지 마라.</h3>
+                <p class="text-sm text-slate-200 leading-relaxed">
+                    무대 위 스포트라이트를 받는 사람은 주인공이 아닙니다.<br>
+                    예배의 유일한 주인공은 <strong class="shimmer-gold font-bold">오직 예수 그리스도</strong> 한 분뿐입니다.
+                </p>
+            </div>
+            <div class="text-xs text-yellow-300/80 pt-2 border-t border-red-900/60 font-semibold">예배의 대상은 오직 삼위일체 하나님</div>
+        </div>
+    </div>
+
+    <div class="w-full bg-slate-900/80 p-2.5 rounded-xl border border-slate-700 text-center text-xs text-slate-300">
+        💡 <strong>인도자의 본분:</strong> 내가 빛나는 것이 아니라, 하나님의 거룩한 임재 앞으로 회중을 안내하는 것입니다.
+    </div>
 </div>
 </div>
 <!-- [WEEK 1 - SLIDE 3] -->
-<div class="slide" data-week="week1" id="slide-3">
-<h2 class="text-4xl font-bold mb-10 text-center fade-in-up">우리가 박수받기를 갈망하는 이유</h2>
-<div class="flex flex-col space-y-8 w-full max-w-5xl mx-auto fade-in-up delay-100">
-<!-- Row 1: Creation -->
-<div class="flex items-center justify-between space-x-4">
-<div class="diagram-box flex-1">하나님</div>
-<div class="text-white text-3xl">➔</div>
-<div class="diagram-box flex-1">인간</div>
-<div class="text-white text-3xl">➔</div>
-<div class="diagram-box white flex-1">하나님의<br/>영광을 찬송</div>
-</div>
-<!-- Row 2: Fall -->
-<div class="flex items-center justify-between space-x-4 opacity-70 hover:opacity-100 transition-opacity">
-<div class="diagram-box flex-1 border-gray-600 text-gray-400">하나님</div>
-<div class="text-gray-500 text-3xl">➔</div>
-<div class="diagram-box flex-1 border-gray-600 text-gray-400">타락한 인간</div>
-<div class="text-red-500 text-3xl">➔</div>
-<div class="diagram-box highlight alert-glow flex-1 relative">
-                        <span class="shimmer-red font-bold">자기가 왕이 되어</span><br/>영광을 차지함
-                        <div class="absolute -right-12 top-1/2 transform -translate-y-1/2 text-4xl">⚠️</div>
-</div>
-</div>
-</div>
-<div class="mt-12 text-center text-xl text-gray-300 fade-in-up delay-300 bg-gray-800/50 p-6 rounded-xl">
-                기독교 세계관의 첫 단추는 '창조와 타락'입니다.<br/>
-                우리는 하나님의 영광을 위해 창조되었으나,<br/>
-<span class="text-red-400 font-bold">죄의 본질은 내가 하나님의 자리에 올라가 영광을 가로채려는 것입니다.</span>
+<div class="slide" data-week="week1">
+<div class="w-full max-w-5xl mx-auto flex flex-col justify-center items-center text-center my-auto">
+    <div class="inline-flex items-center gap-2 px-3 py-0.5 rounded-full bg-blue-600/20 text-blue-300 border border-blue-500/40 text-xs font-bold mb-2">
+        📖 CHRISTIAN WORLDVIEW
+    </div>
+    <h2 class="text-3xl font-extrabold text-white mb-1">
+        우리가 박수받기를 갈망하는 이유
+    </h2>
+    <p class="text-xs text-slate-400 mb-4">기독교 세계관의 첫 단추 : 창조와 타락</p>
+
+    <div class="space-y-3 w-full mb-4">
+        <div class="bg-slate-800/80 p-3.5 rounded-xl border border-blue-500/40 flex items-center justify-between text-left">
+            <div class="flex items-center gap-3">
+                <span class="px-2.5 py-0.5 rounded bg-blue-500/20 text-blue-400 font-bold text-xs">원래의 창조 목적</span>
+                <span class="text-sm text-white font-semibold">하나님 ➔ 인간 ➔ <span class="text-blue-300 font-bold">하나님의 영광 찬송</span></span>
+            </div>
+            <span class="text-xs text-blue-400 font-bold">생명과 질서</span>
+        </div>
+
+        <div class="bg-slate-800/90 p-3.5 rounded-xl border-2 border-red-500/70 alert-glow flex items-center justify-between text-left">
+            <div class="flex items-center gap-3">
+                <span class="px-2.5 py-0.5 rounded bg-red-500/30 text-red-300 font-bold text-xs">죄와 타락의 상태</span>
+                <span class="text-sm text-white font-semibold">하나님 ➔ 타락한 인간 ➔ <span class="shimmer-red font-bold">자기가 왕이 되어 영광을 가로챔</span></span>
+            </div>
+            <span class="text-xs text-red-400 font-bold">⚠️ 영적 월권</span>
+        </div>
+    </div>
+
+    <div class="w-full bg-slate-900/90 p-3 rounded-xl border border-slate-700 text-center text-xs text-slate-200">
+        기독교 세계관의 핵심: 우리는 하나님의 영광을 위해 창조되었으나,<br>
+        <strong class="shimmer-red font-bold">죄의 본질은 내가 하나님의 자리에 올라가 영광을 가로채려는 것</strong>입니다.
+    </div>
 </div>
 </div>
 <!-- [WEEK 1 - SLIDE 4] -->
-<div class="slide" data-week="week1" id="slide-4">
-<h2 class="text-4xl font-bold mb-16 text-center text-yellow-500 fade-in-up">우상을 만들어내는 공장, 우리의 마음</h2>
-<div class="flex items-center justify-center space-x-8 mb-16 fade-in-up delay-100">
-<div class="bg-gray-800 p-8 rounded-full shadow-lg border border-gray-700 text-2xl font-bold">🎤 마이크 / 찬양 인도</div>
-<div class="text-4xl text-gray-500">➔</div>
-<div class="bg-gray-800 p-8 rounded-full shadow-lg border border-gray-700 text-2xl font-bold">🖤 타락한 인간의 마음</div>
-<div class="text-4xl text-red-500">➔</div>
-<div class="bg-red-900/40 p-8 rounded-full shadow-lg border border-red-500 text-2xl font-bold text-red-200">👑 <span class="shimmer-red font-bold">자기 자신을 향한 우상 숭배</span></div>
-</div>
-<div class="text-center space-y-8 fade-in-up delay-300">
-<blockquote class="text-3xl italic text-gray-400 border-l-4 border-gray-500 pl-4 inline-block">
-                    “인간의 마음은 우상을 만드는 공장이다.”<br/>
-<span class="text-xl text-gray-500 not-italic mt-2 block">- 존 칼빈, 『기독교 강요』</span>
-</blockquote>
-<p class="text-2xl text-gray-200 bg-gray-800/80 p-6 rounded-lg inline-block mx-auto">
-                    마이크를 잡고 내 목소리로 사람들을 감동시키려 한다면?<br/>
-                    그것은 하나님을 예배하는 것이 아니라, <span class="text-red-400 font-bold">자기 자신을 우상으로 예배하는 길</span>입니다.
+<div class="slide" data-week="week1">
+<div class="w-full max-w-5xl mx-auto flex flex-col justify-center items-center text-center my-auto">
+    <div class="inline-flex items-center gap-2 px-3 py-0.5 rounded-full bg-purple-600/20 text-purple-300 border border-purple-500/40 text-xs font-bold mb-2">
+        🏛️ THEOLOGICAL INSIGHT
+    </div>
+    <h2 class="text-3xl font-extrabold text-white mb-1">
+        인간의 마음은 <span class="shimmer-purple font-black">우상을 만들어내는 공장</span>이다
+    </h2>
+    <p class="text-xs text-slate-400 mb-4">종교개혁자 존 칼빈(John Calvin)의 경고</p>
+
+    <div class="grid grid-cols-2 gap-5 w-full items-stretch mb-3 text-left">
+        <div class="bg-slate-800/80 p-4 rounded-xl border border-slate-700 flex flex-col justify-between">
+            <div>
+                <h3 class="text-base font-bold text-purple-300 mb-1 flex items-center gap-1.5">
+                    <span>🏭</span> 우상 공장의 작동 방식
+                </h3>
+                <p class="text-xs text-slate-300 leading-relaxed">
+                    인간은 끊임없이 무언가를 숭배하도록 지어졌습니다. 그러나 하나님을 떠난 인간은 <strong>가장 쉽게 자기 자신을 우상화</strong>합니다.
                 </p>
+            </div>
+            <div class="text-[11px] text-slate-400 pt-2 border-t border-slate-700">자기 칭찬, 사람의 인정, 외모, 실력 추구</div>
+        </div>
+
+        <div class="bg-slate-800/90 p-4 rounded-xl border border-red-500/60 alert-glow flex flex-col justify-between">
+            <div>
+                <h3 class="text-base font-bold text-red-400 mb-1 flex items-center gap-1.5">
+                    <span>⚠️</span> 찬양 사역에서의 치명적 위험
+                </h3>
+                <p class="text-xs text-slate-200 leading-relaxed">
+                    무대 위에서 <strong class="shimmer-red font-bold">자기 자신을 향한 우상 숭배</strong>가 일어날 때, 찬양은 하나님을 위한 예배가 아니라 자아를 전시하는 쇼가 됩니다.
+                </p>
+            </div>
+            <div class="text-[11px] text-red-300/80 pt-2 border-t border-red-900/60 font-semibold">외형은 거룩하나 중심은 자아도취</div>
+        </div>
+    </div>
+
+    <div class="w-full bg-slate-900/90 p-2.5 rounded-xl border border-slate-700 text-center text-xs text-slate-300">
+        ⚠️ <strong>핵심 경고:</strong> 예배의 형식을 빌려 자기 자신을 예배하는 영적 위선을 철저히 경계해야 합니다.
+    </div>
 </div>
 </div>
 <!-- [WEEK 1 - SLIDE 5] -->
-<div class="slide" data-week="week1" id="slide-5">
-<h2 class="text-4xl font-bold mb-10 text-center fade-in-up">당신은 무대 위의 가수가 아니라 <span class="text-blue-400"><span class='shimmer-emerald font-black'>'다리(Bridge)'</span></span>다</h2>
-<div class="w-full max-w-5xl mx-auto overflow-hidden rounded-2xl shadow-2xl border border-gray-700 fade-in-up delay-100">
-<table class="w-full text-left border-collapse">
-<thead>
-<tr class="bg-gray-800 text-2xl">
-<th class="p-6 border-b border-gray-700 w-1/4 text-center">정체성 (Identity)</th>
-<th class="p-6 border-b border-gray-700 w-1/3 text-center text-gray-400">가수 (Singer)</th>
-<th class="p-6 border-b border-gray-700 text-center text-blue-400">청지기 / 다리 (Bridge)</th>
-</tr>
-</thead>
-<tbody class="text-xl bg-gray-900/50">
-<tr>
-<td class="p-6 border-b border-gray-800 font-bold text-center bg-gray-800/30">목적 (Purpose)<br/><span class="text-sm text-gray-500">시선 (Focus)</span></td>
-<td class="p-6 border-b border-gray-800 text-center text-gray-400">대중의 박수와 환호<br/><span class="text-lg">나 자신과 나의 실력</span></td>
-<td class="p-6 border-b border-gray-800 text-center font-bold text-white">회중과 하나님과의 연결<br/><span class="text-yellow-400 text-2xl">오직 예수 그리스도</span></td>
-</tr>
-<tr>
-<td class="p-6 font-bold text-center bg-gray-800/30">롤모델 (Model)</td>
-<td class="p-6 text-center text-gray-400">오디션 스타</td>
-<td class="p-6 text-center font-bold text-blue-300">세례요한</td>
-</tr>
-</tbody>
-</table>
+<div class="slide" data-week="week1">
+<div class="w-full max-w-5xl mx-auto flex flex-col justify-center items-center text-center my-auto">
+    <div class="inline-flex items-center gap-2 px-3 py-0.5 rounded-full bg-emerald-600/20 text-emerald-300 border border-emerald-500/40 text-xs font-bold mb-2">
+        🌉 IDENTITY IN CHRIST
+    </div>
+    <h2 class="text-3xl font-extrabold text-white mb-1">
+        당신은 무대 위의 가수가 아니라 <span class="shimmer-emerald font-black">'다리(Bridge)'</span>다
+    </h2>
+    <p class="text-xs text-slate-400 mb-4">퍼포머(Performer)와 청지기(Steward)의 근본적 차이</p>
+
+    <div class="w-full bg-slate-900/90 rounded-xl border border-slate-700 overflow-hidden mb-3 shadow-xl">
+        <table class="w-full text-left text-xs">
+            <thead class="bg-slate-800 text-slate-200 font-bold">
+                <tr>
+                    <th class="p-2.5 text-center w-1/4">구분</th>
+                    <th class="p-2.5 text-center w-3/8 text-red-400">세상 무대의 가수 (Singer)</th>
+                    <th class="p-2.5 text-center w-3/8 text-emerald-400">찬양 인도자 (Bridge / 청지기)</th>
+                </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-800 text-slate-300">
+                <tr>
+                    <td class="p-2.5 text-center font-bold bg-slate-800/40">주요 목적</td>
+                    <td class="p-2.5 text-center text-slate-400">대중의 박수, 환호, 자기 만족</td>
+                    <td class="p-2.5 text-center font-bold text-white">회중과 하나님과의 거룩한 연결</td>
+                </tr>
+                <tr>
+                    <td class="p-2.5 text-center font-bold bg-slate-800/40">시선의 초점</td>
+                    <td class="p-2.5 text-center text-slate-400">나 자신과 나의 가창력 / 연주력</td>
+                    <td class="p-2.5 text-center font-bold text-yellow-300"><span class="shimmer-gold">오직 예수 그리스도의 십자가</span></td>
+                </tr>
+                <tr>
+                    <td class="p-2.5 text-center font-bold bg-slate-800/40">영적 롤모델</td>
+                    <td class="p-2.5 text-center text-slate-400">오디션 스타, 인기 연예인</td>
+                    <td class="p-2.5 text-center font-bold text-emerald-300">광야의 소리, 세례 요한</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="w-full bg-blue-900/20 p-2.5 rounded-xl border border-blue-500/30 text-center text-xs text-blue-200">
+        우리는 세상의 오디션 프로그램에 나오는 퍼포머가 아닙니다. 오직 주님께로 인도하는 거룩한 다리입니다.
+    </div>
 </div>
-<p class="text-center text-2xl mt-12 text-gray-300 fade-in-up delay-300 font-medium bg-blue-900/20 p-4 rounded-lg inline-block mx-auto border border-blue-500/30">
-                우리는 세상의 오디션 프로그램에 나오는 퍼포머가 아닙니다.
-            </p>
 </div>
 <!-- [WEEK 1 - SLIDE 6] -->
-<div class="slide p-0" data-week="week1" id="slide-6">
-<div id="canvas-container"></div>
-<!-- Content overlay to sit on top of 3D canvas -->
-<div class="content-overlay h-full w-full flex flex-col justify-between p-[5%_8%] pointer-events-none">
-<div class="fade-in-up bg-black/60 p-6 rounded-2xl backdrop-blur-sm self-start border border-gray-700">
-<h2 class="text-4xl font-bold text-white mb-2">다리가 스스로 빛나려 할 때 일어나는 일</h2>
-<p class="text-xl text-gray-300">인도자가 자신을 드러내고 목적지가 되려 하는 순간, 하나님을 향한 다리는 무너집니다.</p>
-</div>
-<div class="fade-in-up delay-300 bg-black/60 p-6 rounded-2xl backdrop-blur-sm self-end text-right border border-gray-700">
-<p class="text-2xl font-bold text-yellow-400"><span class="shimmer-gold font-black">다리 위를 건너가는 분은 오직 예수 그리스도여야 합니다.</span></p>
-</div>
+<div class="slide" data-week="week1">
+<div class="w-full max-w-5xl mx-auto flex flex-col justify-center items-center text-center my-auto">
+    <div class="inline-flex items-center gap-2 px-3 py-0.5 rounded-full bg-amber-600/20 text-yellow-300 border border-yellow-500/40 text-xs font-bold mb-2">
+        🔍 SPIRITUAL METAPHOR
+    </div>
+    <h2 class="text-3xl font-extrabold text-white mb-1">
+        다리가 스스로 빛나려 할 때 일어나는 일
+    </h2>
+    <p class="text-xs text-slate-400 mb-4">다리의 본분은 건너가는 사람을 돕는 것입니다</p>
+
+    <div class="grid grid-cols-3 gap-4 w-full items-stretch mb-3 text-left">
+        <div class="bg-slate-800/80 p-4 rounded-xl border border-slate-700 flex flex-col justify-between">
+            <div>
+                <div class="text-blue-400 font-bold text-xs mb-1.5">STEP 01</div>
+                <h3 class="text-sm font-bold text-white mb-1">다리의 존재 이유</h3>
+                <p class="text-xs text-slate-300 leading-relaxed">
+                    다리는 양쪽을 이어주는 도구입니다. 다리 자체가 목적지가 될 수 없습니다.
+                </p>
+            </div>
+            <div class="text-[11px] text-slate-500 pt-2 border-t border-slate-700">연결의 도구</div>
+        </div>
+
+        <div class="bg-slate-800/80 p-4 rounded-xl border border-red-500/50 alert-glow flex flex-col justify-between">
+            <div>
+                <div class="text-red-400 font-bold text-xs mb-1.5">STEP 02</div>
+                <h3 class="text-sm font-bold text-white mb-1">다리가 빛날 때의 위험</h3>
+                <p class="text-xs text-slate-300 leading-relaxed">
+                    다리가 스스로 화려하게 빛나면, 사람들은 건너가지 않고 다리 위에 멈춰 서서 다리를 구경합니다.
+                </p>
+            </div>
+            <div class="text-[11px] text-red-400 pt-2 border-t border-slate-700">시선의 왜곡</div>
+        </div>
+
+        <div class="bg-slate-800/90 p-4 rounded-xl border border-emerald-500/50 safe-glow flex flex-col justify-between">
+            <div>
+                <div class="text-emerald-400 font-bold text-xs mb-1.5">STEP 03</div>
+                <h3 class="text-sm font-bold text-white mb-1">인도자의 영적 사명</h3>
+                <p class="text-xs text-slate-300 leading-relaxed">
+                    회중이 나를 지나쳐 오직 하나님 품으로 완전히 나아가도록 나 자신을 감추는 것입니다.
+                </p>
+            </div>
+            <div class="text-[11px] text-emerald-400 pt-2 border-t border-slate-700">그리스도만 존귀</div>
+        </div>
+    </div>
+
+    <div class="w-full bg-slate-900/90 p-2.5 rounded-xl border border-slate-700 text-center text-xs text-slate-200">
+        <strong class="shimmer-gold font-bold">다리 위를 건너가는 분은 오직 예수 그리스도여야 합니다.</strong>
+    </div>
 </div>
 </div>
 <!-- [WEEK 1 - SLIDE 7] -->
-<div class="slide" data-week="week1" id="slide-7">
-<div class="flex flex-col items-center justify-center h-full text-center">
-<p class="text-2xl text-gray-400 mb-8 fade-in-up tracking-widest font-bold">개혁주의 찬양 인도자의 영원한 좌우명</p>
-<h1 class="text-8xl font-black leading-tight fade-in-up delay-100 mb-12 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">
-                    <span class="shimmer-text font-black">그는 흥하여야 하겠고</span><br/>
-                    나는 쇠하여야 하리라
-                </h1>
-<p class="text-3xl text-gray-300 fade-in-up delay-300 border-t border-gray-700 pt-8">
-<span class="verse-trigger" data-verse="john3_30">요한복음 3장 30절</span> <span class="text-xl text-gray-500">(세례요한의 고백)</span>
-</p>
+<div class="slide" data-week="week1">
+<div class="w-full max-w-4xl mx-auto flex flex-col justify-center items-center text-center my-auto">
+    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-600/20 text-blue-300 border border-blue-500/40 text-xs font-bold mb-4">
+        📜 JOHN 3:30
+    </div>
+    <h1 class="text-4xl md:text-5xl font-black shimmer-text mb-6 leading-tight">
+        "그는 흥하여야 하겠고<br>나는 쇠하여야 하리라"
+    </h1>
+    <div class="bg-slate-800/80 p-5 rounded-xl border border-slate-700 max-w-2xl mx-auto mb-5 text-left shadow-xl">
+        <p class="text-sm text-slate-300 leading-relaxed mb-2">
+            신랑의 음성을 듣는 친구는 신랑의 기쁨으로 충만합니다.
+            세례 요한은 주인공이 오셨을 때 기꺼이 무대 뒤로 사라졌습니다.
+        </p>
+        <p class="text-xs text-yellow-300 font-semibold">
+            참된 찬양 인도자는 그리스도께서 높임 받으실 때 가장 큰 기쁨을 누립니다.
+        </p>
+    </div>
+    <div class="text-xs text-slate-400 font-mono">
+        SOLI DEO GLORIA ── 오직 하나님께 영광을
+    </div>
 </div>
 </div>
 <!-- [WEEK 1 - SLIDE 8] -->
-<div class="slide" data-week="week1" id="slide-8">
-<h2 class="text-4xl font-bold mb-16 text-center fade-in-up"><span class="shimmer-gold font-bold">진정한 예배</span>의 공식</h2>
-<div class="flex justify-center items-center space-x-12 mb-16 fade-in-up delay-100">
-<div class="flex flex-col items-center">
-<div class="text-5xl font-black text-gray-500 mb-4">나</div>
-<div class="text-6xl text-red-500 animate-bounce">⬇️</div>
+<div class="slide" data-week="week1">
+<div class="w-full max-w-5xl mx-auto flex flex-col justify-center items-center text-center my-auto">
+    <div class="inline-flex items-center gap-2 px-3 py-0.5 rounded-full bg-emerald-600/20 text-emerald-300 border border-emerald-500/40 text-xs font-bold mb-2">
+        ⚖️ THE SACRED FORMULA
+    </div>
+    <h2 class="text-3xl font-extrabold text-white mb-1">
+        <span class="shimmer-gold font-black">진정한 예배</span>의 영적 공식
+    </h2>
+    <p class="text-xs text-slate-400 mb-4">하나님의 영광과 인간의 비워짐</p>
+
+    <div class="grid grid-cols-3 gap-4 w-full items-stretch mb-4">
+        <div class="bg-slate-800/80 p-4 rounded-xl border border-blue-500/40 text-center flex flex-col justify-between">
+            <div class="text-2xl font-black text-blue-400 mb-1">[-] 01</div>
+            <h3 class="text-base font-bold text-white mb-1">나의 비워짐</h3>
+            <p class="text-xs text-slate-300">자기 자랑, 인정 욕구, 음악적 과시욕을 십자가 앞에 내려놓음</p>
+        </div>
+
+        <div class="bg-slate-800/80 p-4 rounded-xl border border-emerald-500/40 text-center flex flex-col justify-between">
+            <div class="text-2xl font-black text-emerald-400 mb-1">[+] 02</div>
+            <h3 class="text-base font-bold text-white mb-1">하나님의 임재</h3>
+            <p class="text-xs text-slate-300">성령의 역사와 말씀의 명확한 선포로 예배 공간을 가득 채움</p>
+        </div>
+
+        <div class="bg-slate-800/90 p-4 rounded-xl border border-amber-500/40 safe-glow text-center flex flex-col justify-between">
+            <div class="text-2xl font-black text-yellow-400 mb-1">[=] 03</div>
+            <h3 class="text-base font-bold text-white mb-1">진정한 예배</h3>
+            <p class="text-xs text-slate-300">오직 삼위일체 하나님 한 분만이 온전히 영광 받으시는 거룩한 상태</p>
+        </div>
+    </div>
+
+    <div class="w-full bg-slate-900/90 p-2.5 rounded-xl border border-slate-700 text-center text-xs text-slate-200">
+        내가 작아질수록 하나님은 커지시며, 내가 사라질 때 그리스도의 영광이 찬란히 드러납니다.
+    </div>
 </div>
-<div class="text-5xl font-bold text-gray-600">+</div>
-<div class="flex flex-col items-center">
-<div class="text-5xl font-black text-yellow-400 mb-4">예수 그리스도</div>
-<div class="text-6xl text-blue-400 animate-bounce" style="animation-direction: reverse;">⬆️</div>
-</div>
-<div class="text-5xl font-bold text-gray-600">=</div>
-<div class="bg-gradient-to-r from-blue-900 to-indigo-900 p-8 rounded-2xl border border-blue-500 shadow-2xl text-center">
-<div class="text-4xl font-bold text-white mb-2">그리스도의 말씀이</div>
-<div class="text-4xl font-bold text-white mb-4">풍성히 거하게</div>
-<div class="text-xl text-blue-300">(<span class="verse-trigger" data-verse="col3_16">골 3:16</span>)</div>
-</div>
-</div>
-<div class="text-center text-2xl text-gray-300 fade-in-up delay-300 leading-relaxed bg-gray-800/40 p-8 rounded-xl max-w-4xl mx-auto">
-                내 안의 우상 공장을 멈추는 유일한 방법은 <span class="text-red-400 font-bold">'나의 쇠함'</span>입니다.<br/>
-                내가 철저히 작아지고 사라질 때, 그 빈 공간에 <span class="text-yellow-400 font-bold">그리스도의 말씀</span>이 채워집니다.
-            </div>
 </div>
 <!-- [WEEK 1 - SLIDE 9] -->
 <div class="slide" data-week="week1">
-<div class="max-w-4xl mx-auto w-full">
-<div class="inline-block bg-blue-600 text-white px-3 py-1 rounded-lg font-bold text-sm mb-2">적용 및 결단</div>
-<h2 class="text-3xl font-black mb-3 text-white"><span class="shimmer-gold">오직 주님만 드러나게 하소서</span></h2>
-<div class="bg-gray-800 border-l-4 border-blue-500 p-4 rounded-r-xl shadow-xl mb-3 safe-glow">
-<p class="text-base mb-1 text-gray-200"><span class="text-gray-400 font-bold w-28 inline-block">과제 제목:</span> 나의 영적 교만 회개와 인도자 청지기 결단문</p>
-<p class="text-base text-gray-200"><span class="text-gray-400 font-bold w-28 inline-block">분량 및 기한:</span> A4 용지 1페이지 내외 (지금 작성)</p>
-</div>
-<div class="bg-gray-900/80 border border-gray-700 p-4 rounded-xl">
-<h3 class="text-lg font-bold text-yellow-400 mb-2.5 flex items-center">
-<span class="mr-2 gold-pulse">✍️</span> 필수 포함 내용 (작성 가이드)
-</h3>
-<ul class="space-y-2 text-sm text-gray-200">
-<li class="flex items-start">
-<span class="bg-blue-600 text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 flex-shrink-0 font-bold text-xs">1</span>
-<p>찬양 중 '사람의 시선'이나 '자기 만족'을 구했던 구체적인 순간 고백</p>
-</li>
-<li class="flex items-start">
-<span class="bg-blue-600 text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 flex-shrink-0 font-bold text-xs">2</span>
-<p>세례요한의 고백(<span class="shimmer-emerald font-bold">요 3:30</span>)에 비추어 볼 때, 내가 '쇠하여야 할' 구체적인 부분</p>
-</li>
-<li class="flex items-start">
-<span class="bg-blue-600 text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 flex-shrink-0 font-bold text-xs">3</span>
-<p>오직 예수님만 예배의 주인공이 되게 하겠다는 나의 구체적 다짐</p>
-</li>
-</ul>
-</div>
+<div class="w-full max-w-5xl mx-auto flex flex-col justify-center items-center text-center my-auto">
+    <div class="inline-flex items-center gap-2 px-3 py-0.5 rounded-full bg-blue-600/20 text-blue-300 border border-blue-500/40 text-xs font-bold mb-2">
+        ✍️ APPLICATION & ASSIGNMENT
+    </div>
+    <h2 class="text-3xl font-extrabold text-white mb-1">
+        <span class="shimmer-gold font-black">오직 주님만 드러나게 하소서</span>
+    </h2>
+    <p class="text-xs text-slate-400 mb-4">1주차 적용 및 인도자 청지기 결단 과제</p>
+
+    <div class="grid grid-cols-2 gap-4 w-full items-stretch text-left mb-3">
+        <div class="bg-slate-800/80 p-4 rounded-xl border border-blue-500/40 flex flex-col justify-between safe-glow">
+            <div>
+                <span class="px-2 py-0.5 rounded bg-blue-500/20 text-blue-300 font-bold text-xs mb-2 inline-block">📋 과제 안내</span>
+                <p class="text-xs text-slate-200 mb-1"><strong>과제명:</strong> 나의 영적 교만 회개와 인도자 청지기 결단문</p>
+                <p class="text-xs text-slate-200 mb-1"><strong>분량:</strong> A4 1페이지 내외 (자필 또는 워드)</p>
+                <p class="text-xs text-slate-200"><strong>제출:</strong> 다음 주 교육 시작 전까지</p>
+            </div>
+            <div class="text-xs text-blue-300 pt-2 border-t border-slate-700">솔직하고 진실된 마음으로 작성하십시오.</div>
+        </div>
+
+        <div class="bg-slate-800/90 p-4 rounded-xl border border-slate-700 flex flex-col justify-between">
+            <div>
+                <span class="px-2 py-0.5 rounded bg-amber-500/20 text-yellow-300 font-bold text-xs mb-2 inline-block">✍️ 필수 포함 내용 3가지</span>
+                <ul class="space-y-1.5 text-xs text-slate-300">
+                    <li class="flex items-start gap-1.5">
+                        <span class="w-4 h-4 rounded-full bg-blue-600 flex items-center justify-center text-[10px] font-black shrink-0">1</span>
+                        <span>찬양 중 사람의 시선이나 자기 만족을 구했던 순간 고백</span>
+                    </li>
+                    <li class="flex items-start gap-1.5">
+                        <span class="w-4 h-4 rounded-full bg-blue-600 flex items-center justify-center text-[10px] font-black shrink-0">2</span>
+                        <span>세례요한의 고백(요 3:30)에 비추어 볼 때 쇠하여야 할 부분</span>
+                    </li>
+                    <li class="flex items-start gap-1.5">
+                        <span class="w-4 h-4 rounded-full bg-blue-600 flex items-center justify-center text-[10px] font-black shrink-0">3</span>
+                        <span>오직 예수님만 예배의 주인공으로 세우겠다는 구체적 결단</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="text-[11px] text-slate-400 pt-1.5 border-t border-slate-700">정직한 자기 성찰이 참된 사역의 출발점입니다.</div>
+        </div>
+    </div>
+
+    <div class="w-full bg-slate-900/90 p-2.5 rounded-xl border border-slate-700 text-center text-xs text-slate-300">
+        💡 고백과 결단을 통해 무대 위의 나를 죽이고 오직 주님만을 높이는 인도자로 서십시오.
+    </div>
 </div>
 </div>
 <!-- [WEEK 1 - SLIDE 10] -->
-<div class="slide" data-week="week1" id="slide-10">
-<div class="flex flex-col items-center justify-center h-full text-center">
-<h1 class="text-7xl font-black leading-tight fade-in-up text-white">
-                    내가 아니라 <span class="text-yellow-400"><span class="shimmer-gold font-black">그리스도</span></span>가 드러날 때,
-                </h1>
-<h1 class="text-7xl font-black leading-tight fade-in-up delay-200 mt-6 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">
-                    비로소 진짜 예배가 시작됩니다.
-                </h1>
-<div class="mt-20 w-32 h-1 bg-gray-700 mx-auto fade-in-up delay-400"></div>
+<div class="slide" data-week="week1">
+<div class="w-full max-w-4xl mx-auto flex flex-col justify-center items-center text-center my-auto">
+    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-600/20 text-emerald-300 border border-emerald-500/40 text-xs font-bold mb-4">
+        🕊️ FINAL COMMISSION
+    </div>
+    <h1 class="text-4xl md:text-5xl font-black text-white mb-4 leading-tight">
+        내가 아니라 <span class="shimmer-gold font-black">그리스도</span>가 드러날 때,<br>
+        비로소 <span class="shimmer-emerald font-black">진짜 예배</span>가 시작됩니다.
+    </h1>
+    <div class="w-16 h-1 bg-gradient-to-r from-blue-500 to-emerald-500 rounded-full mx-auto mb-4"></div>
+    <p class="text-base text-slate-300 max-w-xl mx-auto font-medium mb-4">
+        우리는 무대 위의 주인공이 아닌, 왕이신 하나님의 거룩한 청지기입니다.
+    </p>
+    <div class="text-xs text-slate-400 font-mono">
+        고등부 찬양 인도자 양성 교육 제1주차 완료
+    </div>
 </div>
 </div>
 <!-- [WEEK 2 - SLIDE 11] -->
@@ -818,561 +991,594 @@
     <div class="absolute bottom-0 left-0 w-[24cqw] h-[24cqw] bg-purple-500 rounded-full mix-blend-multiply filter blur-[5cqw] opacity-20"></div>
 </div>
 
-<div class="bento-card text-center max-w-[85%] z-10 flex flex-col items-center p-[1.8cqw] border-t border-t-white/10 alert-glow">
+<div class="bento-card text-center max-w-[58cqw] w-full z-10 flex flex-col items-center p-[2cqw] border-t border-t-white/10 alert-glow mx-auto my-auto">
     <span class="tag tag-blue mb-[0.8cqw]">고등부 찬양 인도자 양성 교육 제2주차</span>
-    <h1 class="text-[3.8cqw] font-black shimmer-red mb-[0.8cqw]">
+    <h1 class="text-[3.8cqw] font-black shimmer-red mb-[0.8cqw] text-center">
         네 감정에 속지 마
     </h1>
-    <p class="text-[1.4cqw] font-semibold m-0 text-slate-300 leading-snug">
+    <p class="text-[1.3cqw] font-semibold m-0 text-slate-300 leading-relaxed text-center">
         CCM의 신학적 분별력, 감정과 체험의 구별,<br>신사도운동의 경계, 그리고 개혁주의 예배
     </p>
 </div>
 </div>
 <!-- [WEEK 2 - SLIDE 12] -->
 <div class="slide" data-week="week2">
-<h2>핵심 교육 목표</h2>
-<div class="flex-center-all" style="height: calc(100% - 6cqw);">
-<div class="grid-auto-height grid-cols-2 gap-[2cqw]">
-<div class="bento-card justify-center items-center text-center hover:-translate-y-1 transition-transform border-t-[0.4cqw] border-t-blue-500">
-<div class="text-[4cqw] mb-[1cqw]">⚖️</div>
-<h3 class="text-blue-400"><span class="shimmer-text">감정과 말씀의 구별</span></h3>
-<p class="text-center m-0">찬양에서 감정의 역할을 긍정하되, 예배의 <strong class="text-blue-300">최종 기준은 느낌이 아닌 말씀</strong>임을 이해한다.</p>
-</div>
-<div class="bento-card justify-center items-center text-center hover:-translate-y-1 transition-transform border-t-[0.4cqw] border-t-purple-500">
-<div class="text-[4cqw] mb-[1cqw]">👁️</div>
-<h3 class="text-purple-400"><span class="shimmer-purple">신사도운동 바른 분별</span></h3>
-<p class="text-center m-0">감정적 음악이 문제가 아니다.<br/>체험과 예언이 <strong class="text-purple-300">성경의 권위를 침범</strong>하는 것을 경계한다.</p>
-</div>
-<div class="bento-card justify-center items-center text-center hover:-translate-y-1 transition-transform border-t-[0.4cqw] border-t-green-500">
-<div class="text-[4cqw] mb-[1cqw]">📖</div>
-<h3 class="text-green-400"><span class="shimmer-emerald">가사와 세계관 평가</span></h3>
-<p class="text-center m-0">CCM을 장르로 판단하지 않고, <strong class="text-green-300">가사의 신학적 내용과 전제된 세계관</strong>으로 평가하는 법을 배운다.</p>
-</div>
-<div class="bento-card justify-center items-center text-center hover:-translate-y-1 transition-transform border-t-[0.4cqw] border-t-rose-500">
-<div class="text-[4cqw] mb-[1cqw]">🎤</div>
-<h3 class="text-rose-400">인도자의 선곡 원칙</h3>
-<p class="text-center m-0">감정보다 말씀을, 체험보다 복음을,<br/><strong class="text-rose-300">자기 자신보다 하나님을 앞세우는</strong> 원칙을 세운다.</p>
-</div>
-</div>
+<div class="w-full max-w-[58cqw] mx-auto flex flex-col justify-center items-center my-auto">
+    <div class="text-center mb-[1.2cqw] w-full">
+        <span class="tag tag-blue mb-[0.4cqw]">CURRICULUM GOALS</span>
+        <h2 class="text-[2.1cqw] font-extrabold text-white text-center m-0 justify-center">핵심 교육 목표 4가지</h2>
+    </div>
+    <div class="grid grid-cols-2 gap-[1.2cqw] w-full">
+        <div class="bento-card justify-center items-center text-center hover:-translate-y-0.5 transition-transform border-t-[0.3cqw] border-t-blue-500 p-[1.2cqw]">
+            <div class="text-[2.5cqw] mb-[0.5cqw]">⚖️</div>
+            <h3 class="text-blue-400 text-[1.4cqw] mb-[0.4cqw]"><span class="shimmer-text">감정과 말씀의 구별</span></h3>
+            <p class="text-center text-[1.05cqw] text-slate-300 m-0">찬양에서 감정의 역할을 긍정하되, 예배의 <strong class="text-blue-300">최종 기준은 느낌이 아닌 말씀</strong>임을 이해한다.</p>
+        </div>
+        <div class="bento-card justify-center items-center text-center hover:-translate-y-0.5 transition-transform border-t-[0.3cqw] border-t-purple-500 p-[1.2cqw]">
+            <div class="text-[2.5cqw] mb-[0.5cqw]">👁️</div>
+            <h3 class="text-purple-400 text-[1.4cqw] mb-[0.4cqw]"><span class="shimmer-purple">신사도운동 바른 분별</span></h3>
+            <p class="text-center text-[1.05cqw] text-slate-300 m-0">감정적 음악이 문제가 아니다.<br>체험과 예언이 <strong class="text-purple-300">성경의 권위를 침범</strong>하는 것을 경계한다.</p>
+        </div>
+        <div class="bento-card justify-center items-center text-center hover:-translate-y-0.5 transition-transform border-t-[0.3cqw] border-t-green-500 p-[1.2cqw]">
+            <div class="text-[2.5cqw] mb-[0.5cqw]">📖</div>
+            <h3 class="text-green-400 text-[1.4cqw] mb-[0.4cqw]"><span class="shimmer-emerald">가사와 세계관 평가</span></h3>
+            <p class="text-center text-[1.05cqw] text-slate-300 m-0">CCM을 장르로 판단하지 않고, <strong class="text-green-300">가사의 신학적 내용과 전제된 세계관</strong>으로 평가하는 법을 배운다.</p>
+        </div>
+        <div class="bento-card justify-center items-center text-center hover:-translate-y-0.5 transition-transform border-t-[0.3cqw] border-t-rose-500 p-[1.2cqw]">
+            <div class="text-[2.5cqw] mb-[0.5cqw]">🎤</div>
+            <h3 class="text-rose-400 text-[1.4cqw] mb-[0.4cqw]"><span class="shimmer-red">개혁주의 예배 기준</span></h3>
+            <p class="text-center text-[1.05cqw] text-slate-300 m-0">감정보다 말씀을, 체험보다 복음을,<br><strong class="text-rose-300">자기 자신보다 하나님을 앞세우는</strong> 원칙을 세운다.</p>
+        </div>
+    </div>
 </div>
 </div>
 <!-- [WEEK 2 - SLIDE 13] -->
 <div class="slide" data-week="week2">
-<h2>반드시 기억해야 할 핵심 명제</h2>
-<div class="flex-center-all" style="height: calc(100% - 6cqw);">
-<div class="grid-auto-height grid-cols-2 gap-[1.5cqw]">
-<div class="bento-card border-l-[0.4cqw] border-l-blue-500 justify-center">
-<h3 class="mb-[0.5cqw]">1. 감정은 죄가 아니다</h3>
-<p class="m-0">그러나 감정이 진리의 기준이 되어서는 안 된다. <b>말씀이 기준</b>이고, 감정은 반응이다.</p>
-</div>
-<div class="bento-card border-l-[0.4cqw] border-l-green-500 justify-center">
-<h3 class="mb-[0.5cqw]">2. 체험은 열매일 뿐</h3>
-<p class="m-0">체험은 예배의 열매가 될 수 있지만, <b>진리의 근거</b>가 될 수는 없다.</p>
-</div>
-<div class="bento-card border-l-[0.4cqw] border-l-purple-500 justify-center">
-<h3 class="mb-[0.5cqw]">3. 예배의 진짜 목적</h3>
-<p class="m-0">감정을 없애는 것이 아니라, 말씀으로 <b>우리의 감정까지 바르게 드리기 위해</b> 예배한다.</p>
-</div>
-<div class="bento-card border-l-[0.4cqw] border-l-rose-500 justify-center">
-<h3 class="mb-[0.5cqw]">4. 위험한 경계선</h3>
-<p class="m-0">감정적 음악이 나쁜 것이 아니다. 감정과 체험이 <b>말씀의 권위를 대신할 때</b> 위험하다.</p>
-</div>
-<!-- 강조 카드 -->
-<div class="col-span-2 bento-card bg-slate-800/80 flex items-center justify-center text-center p-[2cqw] border border-slate-700">
-<p class="text-[2.5cqw] font-bold m-0 leading-snug text-slate-200">
-                            "판단의 기준은 '얼마나 감동적인가'가 아니라<br/>
-<span class="text-blue-400">무엇을 믿고 사랑하고 바라보게 하는가</span> 이다."
-                        </p>
-</div>
-</div>
+<div class="w-full max-w-[58cqw] mx-auto flex flex-col justify-center items-center my-auto">
+    <div class="text-center mb-[1.2cqw] w-full">
+        <span class="tag tag-blue mb-[0.4cqw]">CORE PROPOSITIONS</span>
+        <h2 class="text-[2.1cqw] font-extrabold text-white text-center m-0 justify-center">감정과 체험에 속지 않는 4대 핵심 명제</h2>
+    </div>
+    <div class="grid grid-cols-2 gap-[1.2cqw] w-full mb-[1cqw]">
+        <div class="bento-card border-l-[0.3cqw] border-l-blue-500 justify-center p-[1.2cqw] text-left">
+            <h3 class="text-[1.3cqw] text-blue-300 mb-[0.3cqw]">1. 감정은 죄가 아니다</h3>
+            <p class="text-[1.05cqw] text-slate-300 m-0">그러나 감정이 진리의 기준이 되어서는 안 된다. <b>말씀이 기준</b>이고, 감정은 반응이다.</p>
+        </div>
+        <div class="bento-card border-l-[0.3cqw] border-l-green-500 justify-center p-[1.2cqw] text-left">
+            <h3 class="text-[1.3cqw] text-green-300 mb-[0.3cqw]">2. 체험은 열매일 뿐</h3>
+            <p class="text-[1.05cqw] text-slate-300 m-0">체험은 예배의 열매가 될 수 있지만, <b>진리의 근거</b>가 될 수는 없다.</p>
+        </div>
+        <div class="bento-card border-l-[0.3cqw] border-l-purple-500 justify-center p-[1.2cqw] text-left">
+            <h3 class="text-[1.3cqw] text-purple-300 mb-[0.3cqw]">3. 예배의 진짜 목적</h3>
+            <p class="text-[1.05cqw] text-slate-300 m-0">감정을 없애는 것이 아니라, 말씀으로 <b>우리의 감정까지 바르게 드리기 위해</b> 예배한다.</p>
+        </div>
+        <div class="bento-card border-l-[0.3cqw] border-l-rose-500 justify-center p-[1.2cqw] text-left">
+            <h3 class="text-[1.3cqw] text-rose-300 mb-[0.3cqw]">4. 위험한 경계선</h3>
+            <p class="text-[1.05cqw] text-slate-300 m-0">감정적 음악이 나쁜 것이 아니다. 감정과 체험이 <b>말씀의 권위를 대신할 때</b> 위험하다.</p>
+        </div>
+    </div>
+    <div class="w-full bento-card bg-slate-800/90 flex items-center justify-center text-center p-[1.2cqw] border border-slate-700">
+        <p class="text-[1.4cqw] font-bold m-0 leading-snug text-slate-200">
+            "판단의 기준은 '얼마나 감동적인가'가 아니라<br>
+            <span class="shimmer-text font-bold">무엇을 믿고 사랑하고 바라보게 하는가</span> 이다."
+        </p>
+    </div>
 </div>
 </div>
 <!-- [WEEK 2 - SLIDE 14] -->
 <div class="slide" data-week="week2">
-<h2>핵심 성경 본문</h2>
-<div class="flex-center-all" style="height: calc(100% - 6cqw);">
-<div class="grid-auto-height grid-cols-3 gap-[2cqw]">
-<div class="bento-card bg-gradient-to-b from-slate-800 to-slate-900 border-t-[0.4cqw] border-t-blue-500">
-<div class="flex items-center gap-[1cqw] mb-[1cqw]">
-<span class="text-[2.5cqw]">📖</span>
-<h3 class="m-0 text-blue-400">요한복음 4:23-24</h3>
-</div>
-<p class="text-center font-bold text-[1.8cqw] text-slate-200 mb-[1.5cqw] bg-slate-800 p-[1cqw] rounded border border-slate-700">
-                            "영과 진리로 예배할지니라"
-                        </p>
-<ul class="list-disc pl-[1.5cqw] m-0">
-<li>감정을 없애라는 뜻이 아님.</li>
-<li>단순한 외적 형식이나 감정적 만족 탈피.</li>
-<li>계시된 <strong class="text-blue-300">하나님의 진리에 따라</strong> 반응해야 함.</li>
-</ul>
-</div>
-<div class="bento-card bg-gradient-to-b from-slate-800 to-slate-900 border-t-[0.4cqw] border-t-purple-500">
-<div class="flex items-center gap-[1cqw] mb-[1cqw]">
-<span class="text-[2.5cqw]">📖</span>
-<h3 class="m-0 text-purple-400">갈라디아서 1:10</h3>
-</div>
-<p class="text-center font-bold text-[1.8cqw] text-slate-200 mb-[1.5cqw] bg-slate-800 p-[1cqw] rounded border border-slate-700">
-                            "하나님께 좋게 하랴"
-                        </p>
-<ul class="list-disc pl-[1.5cqw] m-0">
-<li>인도자는 분위기를 위해 선곡하지 않음.</li>
-<li>회중이 좋아하는 곡이 최종 기준이 아님.</li>
-<li>사람의 반응보다 <strong class="text-purple-300">하나님의 뜻</strong> 우선.</li>
-</ul>
-</div>
-<div class="bento-card bg-gradient-to-b from-slate-800 to-slate-900 border-t-[0.4cqw] border-t-green-500">
-<div class="flex items-center gap-[1cqw] mb-[1cqw]">
-<span class="text-[2.5cqw]">📖</span>
-<h3 class="m-0 text-green-400">시편 전체</h3>
-</div>
-<p class="text-center font-bold text-[1.8cqw] text-slate-200 mb-[1.5cqw] bg-slate-800 p-[1cqw] rounded border border-slate-700">
-                            기쁨, 슬픔, 탄식의 고백
-                        </p>
-<ul class="list-disc pl-[1.5cqw] m-0">
-<li>시편은 감정이 풍성한 책.</li>
-<li>"감정이 강하면 위험하다"는 틀린 명제.</li>
-<li>핵심 질문: <strong class="text-green-300">그 감정이 누구를 향하고 있는가?</strong></li>
-</ul>
-</div>
-</div>
+<div class="w-full max-w-[58cqw] mx-auto flex flex-col justify-center items-center my-auto">
+    <div class="text-center mb-[1.2cqw] w-full">
+        <span class="tag tag-blue mb-[0.4cqw]">SCRIPTURAL FOUNDATION</span>
+        <h2 class="text-[2.1cqw] font-extrabold text-white text-center m-0 justify-center">찬양과 예배의 성경적 기초</h2>
+    </div>
+    <div class="grid grid-cols-3 gap-[1.2cqw] w-full">
+        <div class="bento-card bg-gradient-to-b from-slate-800 to-slate-900 border-t-[0.3cqw] border-t-blue-500 p-[1.2cqw] text-left">
+            <div class="flex items-center gap-[0.6cqw] mb-[0.8cqw]">
+                <span class="text-[1.8cqw]">📖</span>
+                <h3 class="m-0 text-blue-400 text-[1.25cqw]">요한복음 4:23-24</h3>
+            </div>
+            <p class="text-center font-bold text-[1.15cqw] text-slate-200 mb-[0.8cqw] bg-slate-800 p-[0.6cqw] rounded border border-slate-700">
+                "영과 진리로 예배할지니라"
+            </p>
+            <ul class="list-disc pl-[1.2cqw] m-0 space-y-[0.3cqw] text-[0.95cqw] text-slate-300">
+                <li>감정을 없애라는 뜻이 아님.</li>
+                <li>단순한 외적 형식/감정적 만족 탈피.</li>
+                <li>계시된 <strong class="text-blue-300">하나님의 진리에 따라</strong> 반응.</li>
+            </ul>
+        </div>
+        <div class="bento-card bg-gradient-to-b from-slate-800 to-slate-900 border-t-[0.3cqw] border-t-purple-500 p-[1.2cqw] text-left">
+            <div class="flex items-center gap-[0.6cqw] mb-[0.8cqw]">
+                <span class="text-[1.8cqw]">📖</span>
+                <h3 class="m-0 text-purple-400 text-[1.25cqw]">갈라디아서 1:10</h3>
+            </div>
+            <p class="text-center font-bold text-[1.15cqw] text-slate-200 mb-[0.8cqw] bg-slate-800 p-[0.6cqw] rounded border border-slate-700">
+                "하나님께 좋게 하랴"
+            </p>
+            <ul class="list-disc pl-[1.2cqw] m-0 space-y-[0.3cqw] text-[0.95cqw] text-slate-300">
+                <li>인도자는 분위기를 위해 선곡하지 않음.</li>
+                <li>회중이 좋아하는 곡이 최종 기준 아님.</li>
+                <li>사람의 반응보다 <strong class="text-purple-300">하나님의 뜻</strong> 우선.</li>
+            </ul>
+        </div>
+        <div class="bento-card bg-gradient-to-b from-slate-800 to-slate-900 border-t-[0.3cqw] border-t-green-500 p-[1.2cqw] text-left">
+            <div class="flex items-center gap-[0.6cqw] mb-[0.8cqw]">
+                <span class="text-[1.8cqw]">📖</span>
+                <h3 class="m-0 text-green-400 text-[1.25cqw]">시편 전체</h3>
+            </div>
+            <p class="text-center font-bold text-[1.15cqw] text-slate-200 mb-[0.8cqw] bg-slate-800 p-[0.6cqw] rounded border border-slate-700">
+                기쁨, 슬픔, 탄식의 고백
+            </p>
+            <ul class="list-disc pl-[1.2cqw] m-0 space-y-[0.3cqw] text-[0.95cqw] text-slate-300">
+                <li>시편은 정서가 풍성한 찬양의 책.</li>
+                <li>"감정이 강하면 위험하다"는 틀린 명제.</li>
+                <li>핵심: <strong class="text-green-300">그 감정이 누구를 향하는가?</strong></li>
+            </ul>
+        </div>
+    </div>
 </div>
 </div>
 <!-- [WEEK 2 - SLIDE 15] -->
 <div class="slide" data-week="week2">
-<h2>감정과 감성주의 구별</h2>
-<div class="flex-center-all" style="height: calc(100% - 6cqw);">
-<div class="grid-auto-height grid-cols-2">
-<div class="bento-card justify-center">
-<p class="text-[1.8cqw] text-slate-200 mb-[2cqw]">
-                            감정 자체는 주신 기능입니다. 눈물이 난다고 비성경적이지 않습니다.<br/>
-                            문제는 <span class="highlight text-[2cqw]">감정의 근거</span>입니다. 감정 강도 = 하나님의 임재? (위험)
-                        </p>
-<div class="bg-rose-900/30 p-[1.5cqw] rounded-[1cqw] border border-rose-500/50 mb-[1.5cqw]">
-<span class="tag-rose mb-[0.5cqw]">❌ 감성주의 (잘못된 판단)</span>
-<p class="m-0 font-bold text-rose-300 text-[1.6cqw]">"이 노래는 감동적이므로 무조건 좋은 찬양이다."</p>
-</div>
-<div class="bg-green-900/30 p-[1.5cqw] rounded-[1cqw] border border-green-500/50">
-<span class="tag-green mb-[0.5cqw]">✅ 바른 판단</span>
-<p class="m-0 font-bold text-green-300 text-[1.6cqw]">"감정적 반응이 일어나지만, 그 감정이 성경적 복음에 근거하는지 확인해야 한다."</p>
-</div>
-</div>
-<div class="bento-card p-0 overflow-hidden relative border-0 min-h-[25cqw]">
-<img alt="3D Abstract Emotion Art" class="img-cover opacity-80" onerror="this.src='https://placehold.co/800x600/1e293b/94a3b8?text=3D+Emotion+Art'" src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&amp;fit=crop&amp;w=800&amp;q=80"/>
-<div class="absolute bottom-0 w-full bg-gradient-to-t from-slate-900 via-slate-900/80 p-[2cqw] text-center pt-[6cqw]">
-<p class="m-0 font-bold text-slate-200 text-[1.8cqw]">감정은 도구일 뿐, 목적이 아닙니다.</p>
-</div>
-</div>
-</div>
+<div class="w-full max-w-[58cqw] mx-auto flex flex-col justify-center items-center my-auto">
+    <div class="text-center mb-[1.2cqw] w-full">
+        <span class="tag tag-blue mb-[0.4cqw]">THEOLOGICAL DISCERNMENT</span>
+        <h2 class="text-[2.1cqw] font-extrabold text-white text-center m-0 justify-center">감정(Emotion)과 감성주의(Emotionalism)의 구별</h2>
+    </div>
+    <div class="grid grid-cols-2 gap-[1.2cqw] w-full">
+        <div class="bento-card justify-center p-[1.4cqw] text-left">
+            <p class="text-[1.15cqw] text-slate-200 mb-[1.2cqw] leading-relaxed">
+                감정 자체는 하나님이 주신 아름다운 기능입니다. 눈물이 난다고 비성경적이지 않습니다.<br>
+                문제는 <span class="text-blue-400 font-bold">감정의 근거</span>입니다. 감정 강도 = 하나님의 임재? (위험)
+            </p>
+            <div class="bg-rose-900/30 p-[1cqw] rounded-[0.6cqw] border border-rose-500/50 mb-[1cqw] alert-glow">
+                <span class="tag-rose mb-[0.3cqw]">❌ 감성주의 (잘못된 판단)</span>
+                <p class="m-0 font-bold text-rose-300 text-[1.15cqw]">"이 노래는 감동적이므로 무조건 좋은 찬양이다."</p>
+            </div>
+            <div class="bg-green-900/30 p-[1cqw] rounded-[0.6cqw] border border-green-500/50 safe-glow">
+                <span class="tag-green mb-[0.3cqw]">✅ 바른 판단</span>
+                <p class="m-0 font-bold text-green-300 text-[1.15cqw]">"감정적 반응이 일어나지만, 그 감정이 성경적 복음에 근거하는지 확인해야 한다."</p>
+            </div>
+        </div>
+        <div class="bento-card p-0 overflow-hidden relative border-0 min-h-[20cqw]">
+            <img alt="3D Abstract Emotion Art" class="img-cover opacity-80" onerror="this.src='https://placehold.co/800x600/1e293b/94a3b8?text=3D+Emotion+Art'" src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&amp;fit=crop&amp;w=800&amp;q=80"/>
+            <div class="absolute bottom-0 w-full bg-gradient-to-t from-slate-900 via-slate-900/80 p-[1.5cqw] text-center pt-[4cqw]">
+                <p class="m-0 font-bold text-slate-200 text-[1.3cqw]">감정은 도구일 뿐, 목적이 아닙니다.</p>
+            </div>
+        </div>
+    </div>
 </div>
 </div>
 <!-- [WEEK 2 - SLIDE 16] -->
 <div class="slide" data-week="week2">
-<h2>팀 켈러의 관점: 마음의 진짜 의미</h2>
-<div class="flex-center-all" style="height: calc(100% - 6cqw);">
-<div class="grid-auto-height grid-rows-[auto_auto] gap-[2cqw]">
-<div class="bento-card border-l-[0.6cqw] border-l-purple-500 bg-purple-900/20 text-center flex items-center justify-center py-[2.5cqw]">
-<p class="text-[2cqw] font-bold text-slate-200 m-0 leading-relaxed">
-                            마음은 단순한 '감정'이 아니라,<br/>
-                            인간의 근본적인 <strong class="text-purple-400">신뢰, 헌신, 욕망</strong>이 작동하는 중심이다.
-                        </p>
-</div>
-<div class="grid grid-cols-3 gap-[1.5cqw]">
-<div class="bento-card justify-center items-center text-center">
-<div class="w-[4cqw] h-[4cqw] bg-slate-700 rounded-full flex items-center justify-center text-[2cqw] mb-[1cqw]">1</div>
-<p class="text-[1.6cqw] text-slate-300 m-0">이 찬양은 내가<br/><strong class="text-white">무엇을 가장 소중하게</strong><br/>여기도록 만드는가?</p>
-</div>
-<div class="bento-card justify-center items-center text-center">
-<div class="w-[4cqw] h-[4cqw] bg-slate-700 rounded-full flex items-center justify-center text-[2cqw] mb-[1cqw]">2</div>
-<p class="text-[1.6cqw] text-slate-300 m-0">이 찬양은<br/><strong class="text-white">무엇이 나를 구원할 것</strong><br/>이라고 말하는가?</p>
-</div>
-<div class="bento-card justify-center items-center text-center border border-blue-500/50 bg-blue-900/10">
-<div class="w-[4cqw] h-[4cqw] bg-blue-600 rounded-full flex items-center justify-center text-[2cqw] mb-[1cqw] text-white">3</div>
-<p class="text-[1.6cqw] text-blue-200 font-bold m-0 mb-[0.5cqw]">궁극적 만족의 대상은?</p>
-<p class="text-[1.3cqw] text-slate-400 m-0">하나님인가?<br/>나 자신/인정/성공인가?</p>
-</div>
-</div>
-</div>
+<div class="w-full max-w-[58cqw] mx-auto flex flex-col justify-center items-center my-auto">
+    <div class="text-center mb-[1.2cqw] w-full">
+        <span class="tag tag-purple mb-[0.4cqw]">TIM KELLER'S INSIGHT</span>
+        <h2 class="text-[2.1cqw] font-extrabold text-white text-center m-0 justify-center">팀 켈러의 관점: 마음의 진짜 의미</h2>
+    </div>
+    <div class="w-full mb-[1.2cqw]">
+        <div class="bento-card border-l-[0.4cqw] border-l-purple-500 bg-purple-900/20 text-center flex items-center justify-center py-[1.2cqw]">
+            <p class="text-[1.3cqw] font-bold text-slate-200 m-0 leading-relaxed">
+                마음은 단순한 '감정'이 아니라,<br>
+                인간의 근본적인 <strong class="shimmer-purple font-bold">신뢰, 헌신, 욕망</strong>이 작동하는 중심이다.
+            </p>
+        </div>
+    </div>
+    <div class="grid grid-cols-3 gap-[1.2cqw] w-full">
+        <div class="bento-card justify-center items-center text-center p-[1.2cqw]">
+            <div class="w-[3cqw] h-[3cqw] bg-slate-700 rounded-full flex items-center justify-center text-[1.4cqw] mb-[0.8cqw] font-bold">1</div>
+            <p class="text-[1.1cqw] text-slate-300 m-0">이 찬양은 내가<br><strong class="text-white">무엇을 가장 소중하게</strong><br>여기도록 만드는가?</p>
+        </div>
+        <div class="bento-card justify-center items-center text-center p-[1.2cqw]">
+            <div class="w-[3cqw] h-[3cqw] bg-slate-700 rounded-full flex items-center justify-center text-[1.4cqw] mb-[0.8cqw] font-bold">2</div>
+            <p class="text-[1.1cqw] text-slate-300 m-0">이 찬양은<br><strong class="text-white">무엇이 나를 구원할 것</strong><br>이라고 말하는가?</p>
+        </div>
+        <div class="bento-card justify-center items-center text-center border border-blue-500/50 bg-blue-900/10 p-[1.2cqw]">
+            <div class="w-[3cqw] h-[3cqw] bg-blue-600 rounded-full flex items-center justify-center text-[1.4cqw] mb-[0.8cqw] text-white font-bold">3</div>
+            <p class="text-[1.1cqw] text-blue-200 font-bold m-0 mb-[0.3cqw]">궁극적 만족의 대상은?</p>
+            <p class="text-[0.95cqw] text-slate-400 m-0">하나님인가?<br>나 자신/인정/성공인가?</p>
+        </div>
+    </div>
 </div>
 </div>
 <!-- [WEEK 2 - SLIDE 17] -->
 <div class="slide" data-week="week2">
-<h2>예배의 기준 (칼빈과 레위기)</h2>
-<div class="flex-center-all" style="height: calc(100% - 6cqw);">
-<div class="grid-auto-height grid-cols-2 gap-[2cqw]">
-<div class="bento-card justify-between border-t-[0.4cqw] border-t-blue-500">
-<div>
-<h3 class="text-blue-400 mb-[1.5cqw]">1. 칼빈의 예배 이해</h3>
-<p class="text-[1.6cqw] text-slate-300">인간이 자기 마음대로 예배 방식을 만들어내지 않도록 경계.</p>
-<ul class="list-disc pl-[1.5cqw] text-[1.5cqw] mt-[1.5cqw]">
-<li class="text-rose-400 line-through mb-[0.5cqw]">"감정 경험을 위해 마음대로 창조하자" (X)</li>
-<li class="text-green-400 font-bold">계시된 말씀을 통해 합당하게 반응 (O)</li>
-</ul>
-</div>
-<div class="bg-slate-700/50 p-[1.5cqw] rounded mt-[2cqw]">
-<p class="text-[1.3cqw] text-slate-400 m-0 text-center">※ 주의: 성경에 없는 악기/순서를 기계적으로 배척하는 것은 아님.</p>
-</div>
-</div>
-<div class="bento-card justify-between border-t-[0.4cqw] border-t-rose-500">
-<div>
-<h3 class="text-rose-400 mb-[1.5cqw]">2. 나답과 아비후 (레 10장)</h3>
-<p class="text-[1.6cqw] text-slate-300">명하시지 않은 '다른 불'을 드려 심판받음. 인간의 임의성 경고.</p>
-<div class="bg-rose-900/20 p-[1.5cqw] rounded border border-rose-500/30 mt-[1.5cqw]">
-<p class="font-bold text-rose-300 m-0 mb-[0.5cqw]">가장 중요한 교훈</p>
-<p class="text-[1.6cqw] text-slate-200 m-0">예배 방법은 <strong class="text-white">인간의 취향과 자의적 상상력</strong>으로 결정되는 것이 아니다.</p>
-</div>
-</div>
-</div>
-</div>
+<div class="w-full max-w-[58cqw] mx-auto flex flex-col justify-center items-center my-auto">
+    <div class="text-center mb-[1.2cqw] w-full">
+        <span class="tag tag-blue mb-[0.4cqw]">REGULATIVE PRINCIPLE</span>
+        <h2 class="text-[2.1cqw] font-extrabold text-white text-center m-0 justify-center">예배의 기준 : 인간의 열정인가, 하나님의 말씀인가?</h2>
+    </div>
+    <div class="grid grid-cols-2 gap-[1.2cqw] w-full">
+        <div class="bento-card justify-between border-t-[0.3cqw] border-t-blue-500 p-[1.4cqw] text-left">
+            <div>
+                <h3 class="text-blue-400 mb-[0.8cqw] text-[1.3cqw]">1. 칼빈의 예배 이해</h3>
+                <p class="text-[1.1cqw] text-slate-300 leading-relaxed">인간이 자기 마음대로 예배 방식을 만들어내지 않도록 경계.</p>
+                <ul class="list-disc pl-[1.2cqw] text-[1.05cqw] mt-[0.8cqw] space-y-[0.3cqw]">
+                    <li class="text-rose-400 line-through">"감정 경험을 위해 마음대로 창조하자" (X)</li>
+                    <li class="text-green-400 font-bold">계시된 말씀을 통해 합당하게 반응 (O)</li>
+                </ul>
+            </div>
+            <div class="bg-slate-700/50 p-[0.8cqw] rounded mt-[1cqw]">
+                <p class="text-[0.95cqw] text-slate-400 m-0 text-center">※ 주의: 성경에 없는 악기/순서를 기계적으로 배척하는 것은 아님.</p>
+            </div>
+        </div>
+        <div class="bento-card justify-between border-t-[0.3cqw] border-t-rose-500 p-[1.4cqw] text-left">
+            <div>
+                <h3 class="text-rose-400 mb-[0.8cqw] text-[1.3cqw]">2. 나답과 아비후 (레 10장)</h3>
+                <p class="text-[1.1cqw] text-slate-300 leading-relaxed">명하시지 않은 '다른 불'을 드려 심판받음. 인간의 임의성 경고.</p>
+                <div class="bg-rose-900/20 p-[1cqw] rounded border border-rose-500/30 mt-[0.8cqw] alert-glow">
+                    <p class="font-bold text-rose-300 m-0 mb-[0.3cqw] text-[1.1cqw]">가장 중요한 교훈</p>
+                    <p class="text-[1.05cqw] text-slate-200 m-0 leading-relaxed">
+                        예배 방법은 <strong class="text-white">인간의 취향과 자의적 상상력</strong>으로 결정되는 것이 아니다.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 </div>
 <!-- [WEEK 2 - SLIDE 18] -->
 <div class="slide" data-week="week2">
-<h2>현대 CCM과 신사도운동 분별</h2>
-<div class="flex-center-all" style="height: calc(100% - 6cqw);">
-<div class="grid-auto-height grid-cols-2 gap-[2cqw]">
-<div class="flex flex-col gap-[1.5cqw] justify-center">
-<div class="bento-card justify-center">
-<h3 class="text-blue-400"><span class='shimmer-text'>장르가 아닌 '신학'으로 판단</span></h3>
-<p class="m-0">장르(어쿠스틱 vs 밴드)가 기준이 아닙니다.<br/>판단 기준은 <b>가사의 신학과 세계관</b>입니다.</p>
-<p class="text-[1.3cqw] text-slate-400 mt-[1cqw] m-0">- 하나님과 인간을 어떻게 묘사하는가?<br/>- 구원과 위로의 근거는 무엇인가?</p>
-</div>
-<div class="bento-card justify-center border-l-[0.4cqw] border-purple-500 bg-purple-900/10">
-<h3 class="text-purple-400"><span class='shimmer-purple'>신사도운동 분별의 핵심</span></h3>
-<p class="mb-[1cqw]">"감정적인가?"가 첫 질문이 아닙니다.</p>
-<p class="font-bold text-[1.6cqw] text-white bg-slate-800 p-[1cqw] text-center rounded border border-slate-600 m-0">
-                                "성경의 최종적인 권위가 어디에 있는가?"
-                            </p>
-<p class="text-[1.2cqw] text-slate-400 mt-[1cqw] text-center m-0">체험이나 예언이 성경을 넘어서는지 확인</p>
-</div>
-</div>
-<!-- Meme HTML (다크모드 최적화, 짤림 방지) -->
-<div class="bento-card bg-slate-800 flex flex-col items-center justify-center p-[1cqw]">
-<div class="relative w-full overflow-hidden bg-black rounded border border-slate-600 flex items-center justify-center" style="aspect-ratio: 4/3; max-height: 22cqw;">
-<img alt="Meme Template" class="absolute inset-0 w-full h-full object-cover opacity-80" src="https://i.imgflip.com/1ur9b0.jpg"/>
-<div class="absolute top-[5%] left-0 w-full text-center">
-<span class="bg-black/80 text-white px-[1.5cqw] py-[0.5cqw] font-bold text-[1.4cqw] rounded">감정적인 현대 CCM 찬양을 보고</span>
-</div>
-<div class="absolute top-[30%] left-[65%] transform -translate-x-1/2">
-<span class="bg-blue-600 text-white px-[1cqw] py-[0.2cqw] font-bold text-[1.2cqw] rounded transform -rotate-12 inline-block">감동 / 눈물</span>
-</div>
-<div class="absolute bottom-[8%] left-0 w-full text-center">
-<span class="bg-black/90 text-rose-400 px-[1.5cqw] py-[0.5cqw] font-extrabold text-[1.8cqw] rounded border border-rose-500">"이게 신사도운동(NAR)인가?"</span>
-</div>
-</div>
-<div class="mt-[1cqw] text-center w-full">
-<span class="tag-rose text-[1.3cqw]">⚠ 잘못된 판단: 감정적 찬양 = 무조건 위험</span>
-</div>
-</div>
-</div>
+<div class="w-full max-w-[58cqw] mx-auto flex flex-col justify-center items-center my-auto">
+    <div class="text-center mb-[1.2cqw] w-full">
+        <span class="tag tag-purple mb-[0.4cqw]">NAR DISCERNMENT</span>
+        <h2 class="text-[2.1cqw] font-extrabold text-white text-center m-0 justify-center">현대 CCM과 신사도운동(NAR) 분별의 바른 기준</h2>
+    </div>
+    <div class="grid grid-cols-2 gap-[1.2cqw] w-full">
+        <div class="flex flex-col gap-[1cqw] justify-center text-left">
+            <div class="bento-card justify-center p-[1.2cqw]">
+                <h3 class="text-blue-400 text-[1.25cqw] mb-[0.4cqw]"><span class="shimmer-text">장르가 아닌 '신학'으로 판단</span></h3>
+                <p class="m-0 text-[1.05cqw] text-slate-300">장르(어쿠스틱 vs 밴드)가 기준이 아닙니다.<br>판단 기준은 <b>가사의 신학과 세계관</b>입니다.</p>
+                <p class="text-[0.95cqw] text-slate-400 mt-[0.6cqw] m-0">- 하나님과 인간을 어떻게 묘사하는가?<br>- 구원과 위로의 근거는 무엇인가?</p>
+            </div>
+            <div class="bento-card justify-center border-l-[0.3cqw] border-purple-500 bg-purple-900/10 p-[1.2cqw]">
+                <h3 class="text-purple-400 text-[1.25cqw] mb-[0.4cqw]"><span class="shimmer-purple">신사도운동 분별의 핵심</span></h3>
+                <p class="mb-[0.6cqw] text-[1.05cqw] text-slate-300">"감정적인가?"가 첫 질문이 아닙니다.</p>
+                <p class="font-bold text-[1.15cqw] text-white bg-slate-800 p-[0.6cqw] text-center rounded border border-slate-600 m-0">
+                    "성경의 최종적인 권위가 어디에 있는가?"
+                </p>
+                <p class="text-[0.9cqw] text-slate-400 mt-[0.4cqw] text-center m-0">체험이나 예언이 성경을 넘어서는지 확인</p>
+            </div>
+        </div>
+        <div class="bento-card bg-slate-800 flex flex-col items-center justify-center p-[1cqw]">
+            <div class="relative w-full overflow-hidden bg-black rounded border border-slate-600 flex items-center justify-center" style="aspect-ratio: 4/3; max-height: 18cqw;">
+                <img alt="Meme Template" class="absolute inset-0 w-full h-full object-cover opacity-80" src="https://i.imgflip.com/1ur9b0.jpg"/>
+                <div class="absolute top-[5%] left-0 w-full text-center">
+                    <span class="bg-black/80 text-white px-[1.2cqw] py-[0.3cqw] font-bold text-[1.1cqw] rounded">감정적인 현대 CCM 찬양을 보고</span>
+                </div>
+                <div class="absolute top-[30%] left-[65%] transform -translate-x-1/2">
+                    <span class="bg-blue-600 text-white px-[0.8cqw] py-[0.2cqw] font-bold text-[0.95cqw] rounded transform -rotate-12 inline-block">감동 / 눈물</span>
+                </div>
+                <div class="absolute bottom-[8%] left-0 w-full text-center">
+                    <span class="bg-black/90 text-rose-400 px-[1.2cqw] py-[0.4cqw] font-extrabold text-[1.3cqw] rounded border border-rose-500">"이게 신사도운동(NAR)인가?"</span>
+                </div>
+            </div>
+            <div class="mt-[0.6cqw] text-center w-full">
+                <span class="tag-rose text-[0.95cqw]">⚠ 잘못된 판단: 감정적 찬양 = 무조건 위험</span>
+            </div>
+        </div>
+    </div>
 </div>
 </div>
 <!-- [WEEK 2 - SLIDE 19] -->
 <div class="slide" data-week="week2">
-<h2>체험과 진리 구별하기</h2>
-<div class="flex-center-all" style="height: calc(100% - 6cqw);">
-<div class="grid-auto-height grid-rows-[auto_auto] gap-[1.5cqw]">
-<div class="grid grid-cols-2 gap-[1.5cqw]">
-<!-- 건강한 구조 -->
-<div class="bento-card border border-green-500/30 safe-glow justify-center items-center text-center">
-<span class="tag-green mb-[1.5cqw]">✅ 건강한 예배 구조</span>
-<div class="flex flex-col items-center gap-[0.5cqw] font-bold text-[1.5cqw] text-slate-300 w-full px-[2cqw]">
-<div class="bg-slate-800 w-full py-[0.8cqw] rounded shadow">1. 말씀</div>
-<span class="text-green-500 text-[1.2cqw]">⬇</span>
-<div class="bg-slate-800 w-full py-[0.8cqw] rounded shadow">2. 하나님에 대한 바른 지식</div>
-<span class="text-green-500 text-[1.2cqw]">⬇</span>
-<div class="bg-slate-800 w-full py-[0.8cqw] rounded shadow">3. 믿음</div>
-<span class="text-green-500 text-[1.2cqw]">⬇</span>
-<div class="bg-green-800/50 text-white w-full py-[0.8cqw] rounded shadow border border-green-500">4. 감정과 의지의 반응</div>
-</div>
-</div>
-<!-- 위험한 구조 -->
-<div class="bento-card border border-rose-500/30 alert-glow justify-center items-center text-center">
-<span class="tag-rose mb-[1.5cqw]">❌ 위험한 구조</span>
-<div class="flex flex-col items-center gap-[0.5cqw] font-bold text-[1.5cqw] text-slate-300 w-full px-[2cqw]">
-<div class="bg-rose-900/50 text-white w-full py-[0.8cqw] rounded shadow border border-rose-500">1. 강렬한 체험</div>
-<span class="text-rose-500 text-[1.2cqw]">⬇</span>
-<div class="bg-slate-800 w-full py-[0.8cqw] rounded shadow">2. 하나님의 임재라고 '해석'</div>
-<span class="text-rose-500 text-[1.2cqw]">⬇</span>
-<div class="bg-slate-700 w-full py-[0.8cqw] rounded shadow text-rose-300">3. 그 체험으로 진리를 판단</div>
-</div>
-</div>
-</div>
-<!-- 하단 경고 카드 -->
-<div class="bento-card flex-row items-center justify-between border-l-[0.4cqw] border-l-rose-500 p-[2cqw]">
-<div>
-<p class="text-rose-400 text-[1.3cqw] mb-[0.5cqw] font-bold">가장 위험한 등식</p>
-<p class="text-[2cqw] font-extrabold m-0 text-white">
-                                강한 감정 <span class="text-rose-500 mx-[1cqw]">≠</span> 강한 하나님의 임재
-                            </p>
-</div>
-<div class="text-right max-w-[50%]">
-<p class="m-0 text-slate-300 text-[1.4cqw]">
-                                감정을 억압할 필요는 없지만,<br/><strong class="text-white">감정이 절대적 기준이 될 수는 없습니다.</strong>
-</p>
-</div>
-</div>
-</div>
+<div class="w-full max-w-[58cqw] mx-auto flex flex-col justify-center items-center my-auto">
+    <div class="text-center mb-[1.2cqw] w-full">
+        <span class="tag tag-blue mb-[0.4cqw]">EPISTEMOLOGY OF WORSHIP</span>
+        <h2 class="text-[2.1cqw] font-extrabold text-white text-center m-0 justify-center">체험과 진리의 올바른 위계질서</h2>
+    </div>
+    <div class="grid grid-cols-2 gap-[1.2cqw] w-full mb-[1cqw]">
+        <div class="bento-card border border-green-500/30 justify-center items-center text-center p-[1.2cqw] safe-glow">
+            <span class="tag-green mb-[0.8cqw]">✅ 건강한 예배 구조</span>
+            <div class="flex flex-col items-center gap-[0.3cqw] font-bold text-[1.1cqw] text-slate-300 w-full px-[1cqw]">
+                <div class="bg-slate-800 w-full py-[0.5cqw] rounded shadow">1. 말씀 (계시)</div>
+                <span class="text-green-500 text-[1cqw]">⬇</span>
+                <div class="bg-slate-800 w-full py-[0.5cqw] rounded shadow">2. 하나님에 대한 바른 지식</div>
+                <span class="text-green-500 text-[1cqw]">⬇</span>
+                <div class="bg-slate-800 w-full py-[0.5cqw] rounded shadow">3. 믿음 (신뢰)</div>
+                <span class="text-green-500 text-[1cqw]">⬇</span>
+                <div class="bg-green-800/50 text-white w-full py-[0.5cqw] rounded shadow border border-green-500">4. 감정과 의지의 반응</div>
+            </div>
+        </div>
+        <div class="bento-card border border-rose-500/30 justify-center items-center text-center p-[1.2cqw] alert-glow">
+            <span class="tag-rose mb-[0.8cqw]">❌ 위험한 구조</span>
+            <div class="flex flex-col items-center gap-[0.3cqw] font-bold text-[1.1cqw] text-slate-300 w-full px-[1cqw]">
+                <div class="bg-rose-900/50 text-white w-full py-[0.5cqw] rounded shadow border border-rose-500">1. 강렬한 체험</div>
+                <span class="text-rose-500 text-[1cqw]">⬇</span>
+                <div class="bg-slate-800 w-full py-[0.5cqw] rounded shadow">2. 하나님의 임재라고 '해석'</div>
+                <span class="text-rose-500 text-[1cqw]">⬇</span>
+                <div class="bg-slate-700 w-full py-[0.5cqw] rounded shadow text-rose-300">3. 그 체험으로 진리를 판단</div>
+            </div>
+        </div>
+    </div>
+    <div class="w-full bento-card flex-row items-center justify-between border-l-[0.3cqw] border-l-rose-500 p-[1.2cqw]">
+        <div class="text-left">
+            <p class="text-rose-400 text-[1.05cqw] mb-[0.2cqw] font-bold">가장 위험한 등식</p>
+            <p class="text-[1.4cqw] font-extrabold m-0 text-white">
+                강한 감정 <span class="text-rose-500 mx-[0.5cqw]">≠</span> 강한 하나님의 임재
+            </p>
+        </div>
+        <div class="text-right max-w-[50%]">
+            <p class="m-0 text-slate-300 text-[1.05cqw]">
+                감정을 억압할 필요는 없지만,<br><strong class="text-white">감정이 절대적 기준이 될 수는 없습니다.</strong>
+            </p>
+        </div>
+    </div>
 </div>
 </div>
 <!-- [WEEK 2 - SLIDE 20] -->
 <div class="slide" data-week="week2">
-<h2>위로와 복음을 대립시키지 말 것</h2>
-<div class="flex-center-all" style="height: calc(100% - 6cqw);">
-<div class="grid-auto-height grid-rows-[auto_auto] gap-[2cqw]">
-<div class="bento-card bg-slate-800 text-center py-[2cqw] border border-slate-700">
-<p class="text-[1.8cqw] text-slate-200 m-0">
-                            사람의 위로 자체가 악한 것은 아닙니다. 성경도 서로 위로하라고 가르칩니다.<br/>
-<strong class="text-blue-400">중요한 것은 그 위로의 '근거와 대상'입니다.</strong>
-</p>
-</div>
-<div class="grid grid-cols-2 gap-[1.5cqw]">
-<!-- 복음과 분리된 위로 -->
-<div class="bento-card border-t-[0.4cqw] border-t-slate-500 bg-slate-800/50 flex flex-col items-center">
-<div class="text-center mb-[1.5cqw] w-full">
-<span class="bg-slate-700 text-slate-200 px-[1.5cqw] py-[0.5cqw] rounded-full text-[1.4cqw] font-bold inline-block">복음과 분리된 위로 (불완전)</span>
-</div>
-<ul class="text-[1.5cqw] text-slate-300 list-disc w-[80%] mx-auto m-0 space-y-[1cqw]">
-<li>"너는 충분히 잘하고 있어."</li>
-<li>"그냥 네 자신을 믿으면 돼."</li>
-<li>"결국 모든 일이 잘될 거야."</li>
-</ul>
-<p class="mt-[1.5cqw] text-[1.2cqw] text-slate-500 text-center w-full">※ 악하진 않지만 궁극적 구원은 불가함</p>
-</div>
-<!-- 복음적인 위로 -->
-<div class="bento-card border-t-[0.4cqw] border-t-blue-500 bg-blue-900/10 flex flex-col items-center">
-<div class="text-center mb-[1.5cqw] w-full">
-<span class="bg-blue-600 text-white px-[1.5cqw] py-[0.5cqw] rounded-full text-[1.4cqw] font-bold inline-block">복음적인 위로 (궁극적)</span>
-</div>
-<ul class="text-[1.5cqw] text-slate-200 list-disc font-semibold w-[80%] mx-auto m-0 space-y-[1cqw]">
-<li>"하나님께서 나를 아시고 떠나지 않으신다."</li>
-<li>"그리스도께서 나를 위해 죽으셨다."</li>
-<li>"현재 상황이 내 가치를 결정하지 않는다."</li>
-</ul>
-</div>
-</div>
-</div>
+<div class="w-full max-w-[58cqw] mx-auto flex flex-col justify-center items-center my-auto">
+    <div class="text-center mb-[1.2cqw] w-full">
+        <span class="tag tag-blue mb-[0.4cqw]">COMFORT & GOSPEL</span>
+        <h2 class="text-[2.1cqw] font-extrabold text-white text-center m-0 justify-center">위로와 복음을 대립시키지 말 것</h2>
+    </div>
+    <div class="w-full mb-[1.2cqw]">
+        <div class="bento-card bg-slate-800 text-center py-[1.2cqw] border border-slate-700">
+            <p class="text-[1.25cqw] text-slate-200 m-0">
+                사람의 위로 자체가 악한 것은 아닙니다. 성경도 서로 위로하라고 가르칩니다.<br>
+                <strong class="text-blue-400">중요한 것은 그 위로의 '근거와 대상'입니다.</strong>
+            </p>
+        </div>
+    </div>
+    <div class="grid grid-cols-2 gap-[1.2cqw] w-full">
+        <div class="bento-card border-t-[0.3cqw] border-t-slate-500 bg-slate-800/50 flex flex-col items-center p-[1.2cqw]">
+            <div class="text-center mb-[1cqw] w-full">
+                <span class="bg-slate-700 text-slate-200 px-[1cqw] py-[0.3cqw] rounded-full text-[1.1cqw] font-bold inline-block">복음과 분리된 위로 (불완전)</span>
+            </div>
+            <ul class="text-[1.05cqw] text-slate-300 list-disc w-[85%] mx-auto m-0 space-y-[0.5cqw] text-left">
+                <li>"너는 충분히 잘하고 있어."</li>
+                <li>"그냥 네 자신을 믿으면 돼."</li>
+                <li>"결국 모든 일이 잘될 거야."</li>
+            </ul>
+            <p class="mt-[1cqw] text-[0.9cqw] text-slate-500 text-center w-full">※ 악하진 않지만 궁극적 구원은 불가함</p>
+        </div>
+        <div class="bento-card border-t-[0.3cqw] border-t-blue-500 bg-blue-900/10 flex flex-col items-center p-[1.2cqw]">
+            <div class="text-center mb-[1cqw] w-full">
+                <span class="bg-blue-600 text-white px-[1cqw] py-[0.3cqw] rounded-full text-[1.1cqw] font-bold inline-block">복음적인 위로 (궁극적)</span>
+            </div>
+            <ul class="text-[1.05cqw] text-slate-200 list-disc font-semibold w-[85%] mx-auto m-0 space-y-[0.5cqw] text-left">
+                <li>"하나님께서 나를 아시고 떠나지 않으신다."</li>
+                <li>"그리스도께서 나를 위해 죽으셨다."</li>
+                <li>"현재 상황이 내 가치를 결정하지 않는다."</li>
+            </ul>
+        </div>
+    </div>
 </div>
 </div>
 <!-- [WEEK 2 - SLIDE 21] -->
 <div class="slide" data-week="week2">
-<h2>사례 연구: 예람워십 「혼자 걷지 않을 거예요」</h2>
-<div class="flex-center-all" style="height: calc(100% - 6cqw);">
-<div class="grid-auto-height grid-rows-[auto_auto] gap-[2cqw]">
-<div class="bento-card flex-row items-center justify-between py-[1.5cqw] border border-slate-700">
-<div class="max-w-[70%]">
-<span class="tag-blue mb-[0.5cqw]">분석 목적</span>
-<p class="m-0 text-[1.5cqw] text-slate-300">곡을 정죄하기 위함이 아닙니다.<br/><b>'공정하고 성경적인 가사 분석법'</b>을 훈련하는 것입니다.</p>
-</div>
-<div class="bg-slate-800 px-[2cqw] py-[1cqw] rounded text-center border border-slate-600">
-<p class="text-[1.2cqw] text-slate-400 m-0">배경 성구</p>
-<p class="text-[1.6cqw] font-bold text-blue-400 m-0">여호수아 1:9</p>
-</div>
-</div>
-<div class="grid grid-cols-3 gap-[2cqw]">
-<div class="bento-card border-t-[0.4cqw] border-t-blue-500 bg-slate-800/50 justify-center">
-<div class="text-[3cqw] mb-[1cqw]">👤</div>
-<h3 class="text-[1.6cqw] text-blue-300">Q1. 위로의 주체는?</h3>
-<p class="text-[1.4cqw] m-0">위로받는 대상과 화자는 누구인가?<br/>위로의 근거가 하나님인지 사람인지 살핍니다.</p>
-</div>
-<div class="bento-card border-t-[0.4cqw] border-t-blue-500 bg-slate-800/50 justify-center">
-<div class="text-[3cqw] mb-[1cqw]">📖</div>
-<h3 class="text-[1.6cqw] text-blue-300">Q2. 수 1:9 해석?</h3>
-<p class="text-[1.4cqw] m-0">일반적 자기계발("넌 혼자가 아니야")과<br/>언약적 약속("하나님이 함께하신다")의 구별.</p>
-</div>
-<div class="bento-card border-t-[0.4cqw] border-t-blue-500 bg-slate-800/50 justify-center">
-<div class="text-[3cqw] mb-[1cqw]">🎤</div>
-<h3 class="text-[1.6cqw] text-blue-300">Q3. 무엇을 고백하는가?</h3>
-<p class="text-[1.4cqw] m-0">회중이 배경 설명 없이 부를 때,<br/>이 가사를 통해 <b>어떤 신앙을 고백</b>하는가?</p>
-</div>
-</div>
-</div>
+<div class="w-full max-w-[58cqw] mx-auto flex flex-col justify-center items-center my-auto">
+    <div class="text-center mb-[1.2cqw] w-full">
+        <span class="tag tag-blue mb-[0.4cqw]">CASE STUDY</span>
+        <h2 class="text-[2.1cqw] font-extrabold text-white text-center m-0 justify-center">사례 연구: 예람워십 「혼자 걷지 않을 거예요」</h2>
+    </div>
+    <div class="w-full mb-[1.2cqw]">
+        <div class="bento-card flex-row items-center justify-between py-[1cqw] px-[1.4cqw] border border-slate-700">
+            <div class="text-left max-w-[70%]">
+                <span class="tag-blue mb-[0.3cqw]">분석 목적</span>
+                <p class="m-0 text-[1.1cqw] text-slate-300">곡을 정죄하기 위함이 아닙니다. <b>'공정하고 성경적인 가사 분석법'</b>을 훈련하는 것입니다.</p>
+            </div>
+            <div class="bg-slate-800 px-[1.4cqw] py-[0.6cqw] rounded text-center border border-slate-600">
+                <p class="text-[0.9cqw] text-slate-400 m-0">배경 성구</p>
+                <p class="text-[1.2cqw] font-bold text-blue-400 m-0">여호수아 1:9</p>
+            </div>
+        </div>
+    </div>
+    <div class="grid grid-cols-3 gap-[1.2cqw] w-full text-left">
+        <div class="bento-card border-t-[0.3cqw] border-t-blue-500 bg-slate-800/50 justify-center p-[1.2cqw]">
+            <div class="text-[2cqw] mb-[0.6cqw]">👤</div>
+            <h3 class="text-[1.2cqw] text-blue-300 mb-[0.3cqw]">Q1. 위로의 주체는?</h3>
+            <p class="text-[1cqw] text-slate-300 m-0">위로받는 대상과 화자는 누구인가?<br>위로의 근거가 하나님인지 사람인지 살핍니다.</p>
+        </div>
+        <div class="bento-card border-t-[0.3cqw] border-t-blue-500 bg-slate-800/50 justify-center p-[1.2cqw]">
+            <div class="text-[2cqw] mb-[0.6cqw]">📖</div>
+            <h3 class="text-[1.2cqw] text-blue-300 mb-[0.3cqw]">Q2. 수 1:9 해석?</h3>
+            <p class="text-[1cqw] text-slate-300 m-0">일반적 자기계발("넌 혼자가 아니야")과<br>언약적 약속("하나님이 함께하신다")의 구별.</p>
+        </div>
+        <div class="bento-card border-t-[0.3cqw] border-t-blue-500 bg-slate-800/50 justify-center p-[1.2cqw]">
+            <div class="text-[2cqw] mb-[0.6cqw]">🎤</div>
+            <h3 class="text-[1.2cqw] text-blue-300 mb-[0.3cqw]">Q3. 무엇을 고백하는가?</h3>
+            <p class="text-[1cqw] text-slate-300 m-0">회중이 배경 설명 없이 부를 때,<br>이 가사를 통해 <b>어떤 신앙을 고백</b>하는가?</p>
+        </div>
+    </div>
 </div>
 </div>
 <!-- [WEEK 2 - SLIDE 22] -->
 <div class="slide" data-week="week2">
-<h2>인도자의 선곡 기준 (7가지 질문)</h2>
-<div class="flex-center-all" style="height: calc(100% - 6cqw);">
-<div class="grid-auto-height grid-rows-[auto_auto] gap-[2cqw]">
-<div class="grid grid-cols-3 gap-[1.5cqw]">
-<div class="bento-card justify-center text-center p-[1.5cqw]">
-<h3 class="text-blue-400 text-[1.6cqw]">1. 하나님</h3>
-<p class="text-[1.3cqw] m-0">성경적 하나님을 바르게 드러내는가?</p>
-</div>
-<div class="bento-card justify-center text-center p-[1.5cqw]">
-<h3 class="text-blue-400 text-[1.6cqw]">2. 인간</h3>
-<p class="text-[1.3cqw] m-0">존엄과 의존성(죄)을 인정하는가?</p>
-</div>
-<div class="bento-card justify-center text-center p-[1.5cqw]">
-<h3 class="text-blue-400 text-[1.6cqw]">3. 그리스도</h3>
-<p class="text-[1.3cqw] m-0">단순 위로자가 아닌 구주로 드러나는가?</p>
-</div>
-<div class="bento-card justify-center text-center p-[1.5cqw]">
-<h3 class="text-blue-400 text-[1.6cqw]">4. 복음</h3>
-<p class="text-[1.3cqw] m-0">십자가/부활 내용과 충돌 없는가?</p>
-</div>
-<div class="bento-card justify-center text-center p-[1.5cqw]">
-<h3 class="text-purple-400 text-[1.6cqw]">5. 위로의 근거</h3>
-<p class="text-[1.3cqw] m-0">자기확신인가, 하나님의 약속인가?</p>
-</div>
-<div class="bento-card justify-center text-center p-[1.5cqw]">
-<h3 class="text-rose-400 text-[1.6cqw]">6. 감정과 진리</h3>
-<p class="text-[1.3cqw] m-0">느낌이 성경보다 높은 권위를 갖는가?</p>
-</div>
-</div>
-<div class="bento-card bg-blue-900/30 border border-blue-500/50 flex flex-row items-center justify-between p-[2cqw]">
-<h3 class="text-[2.2cqw] m-0 text-white">7. 결국 무엇을 바라보게 하는가?</h3>
-<p class="text-[1.6cqw] text-blue-200 m-0 font-bold text-right">
-                            나 자신/감정/체험인가?<br/>아니면 <span class="text-white text-[2cqw]">하나님</span>인가?
-                        </p>
-</div>
-</div>
+<div class="w-full max-w-[58cqw] mx-auto flex flex-col justify-center items-center my-auto">
+    <div class="text-center mb-[1.2cqw] w-full">
+        <span class="tag tag-blue mb-[0.4cqw]">SONG SELECTION CHECKLIST</span>
+        <h2 class="text-[2.1cqw] font-extrabold text-white text-center m-0 justify-center">인도자의 선곡 기준 (7가지 질문)</h2>
+    </div>
+    <div class="grid grid-cols-3 gap-[1cqw] w-full mb-[1cqw]">
+        <div class="bento-card justify-center text-center p-[1cqw]">
+            <h3 class="text-blue-400 text-[1.2cqw] mb-[0.2cqw]">1. 하나님</h3>
+            <p class="text-[0.95cqw] text-slate-300 m-0">성경적 하나님을 바르게 드러내는가?</p>
+        </div>
+        <div class="bento-card justify-center text-center p-[1cqw]">
+            <h3 class="text-blue-400 text-[1.2cqw] mb-[0.2cqw]">2. 인간</h3>
+            <p class="text-[0.95cqw] text-slate-300 m-0">존엄과 의존성(죄)을 인정하는가?</p>
+        </div>
+        <div class="bento-card justify-center text-center p-[1cqw]">
+            <h3 class="text-blue-400 text-[1.2cqw] mb-[0.2cqw]">3. 그리스도</h3>
+            <p class="text-[0.95cqw] text-slate-300 m-0">단순 위로자가 아닌 구주로 드러나는가?</p>
+        </div>
+        <div class="bento-card justify-center text-center p-[1cqw]">
+            <h3 class="text-blue-400 text-[1.2cqw] mb-[0.2cqw]">4. 복음</h3>
+            <p class="text-[0.95cqw] text-slate-300 m-0">십자가/부활 내용과 충돌 없는가?</p>
+        </div>
+        <div class="bento-card justify-center text-center p-[1cqw]">
+            <h3 class="text-purple-400 text-[1.2cqw] mb-[0.2cqw]">5. 위로의 근거</h3>
+            <p class="text-[0.95cqw] text-slate-300 m-0">자기확신인가, 하나님의 약속인가?</p>
+        </div>
+        <div class="bento-card justify-center text-center p-[1cqw]">
+            <h3 class="text-rose-400 text-[1.2cqw] mb-[0.2cqw]">6. 감정과 진리</h3>
+            <p class="text-[0.95cqw] text-slate-300 m-0">느낌이 성경보다 높은 권위를 갖는가?</p>
+        </div>
+    </div>
+    <div class="w-full bento-card bg-blue-900/30 border border-blue-500/50 flex flex-row items-center justify-between p-[1.2cqw]">
+        <h3 class="text-[1.4cqw] m-0 text-white text-left">7. 결국 무엇을 바라보게 하는가?</h3>
+        <p class="text-[1.15cqw] text-blue-200 m-0 font-bold text-right">
+            나 자신/감정/체험인가? 아니면 <span class="text-white text-[1.3cqw]">하나님</span>인가?
+        </p>
+    </div>
 </div>
 </div>
 <!-- [WEEK 2 - SLIDE 23] -->
 <div class="slide" data-week="week2">
-<h2>피해야 할 극단과 개혁주의적 균형</h2>
-<div class="flex-center-all" style="height: calc(100% - 6cqw);">
-<div class="grid-auto-height grid-rows-[auto_auto] gap-[2cqw]">
-<!-- 3가지 극단 -->
-<div class="grid grid-cols-3 gap-[1.5cqw]">
-<div class="bento-card bg-slate-800/80 border-t-[0.3cqw] border-t-rose-500 py-[1.5cqw] text-center justify-center">
-<h3 class="text-rose-400 text-[1.5cqw] mb-[0.5cqw]">⚠️ 감정주의</h3>
-<p class="text-[1.2cqw] m-0">감정이 진리의 기준 (감동적=최고)</p>
-</div>
-<div class="bento-card bg-slate-800/80 border-t-[0.3cqw] border-t-slate-500 py-[1.5cqw] text-center justify-center">
-<h3 class="text-slate-300 text-[1.5cqw] mb-[0.5cqw]">⚠️ 반감정주의</h3>
-<p class="text-[1.2cqw] m-0">성경적 정서 억압 (감성적=위험)</p>
-</div>
-<div class="bento-card bg-slate-800/80 border-t-[0.3cqw] border-t-blue-500 py-[1.5cqw] text-center justify-center">
-<h3 class="text-blue-400 text-[1.5cqw] mb-[0.5cqw]">⚠️ 교리주의</h3>
-<p class="text-[1.2cqw] m-0">어려운 단어 만능 (신학용어=최고)</p>
-</div>
-</div>
-<!-- 개혁주의적 균형 -->
-<div class="bento-card border border-slate-700 justify-center items-center py-[2.5cqw]">
-<h3 class="text-center text-[2cqw] text-white mb-[2cqw]">⚖️ 개혁주의적 찬양의 4요소</h3>
-<div class="grid grid-cols-4 gap-[1.5cqw] w-full px-[1cqw]">
-<div class="text-center">
-<div class="w-[5cqw] h-[5cqw] mx-auto bg-blue-900/30 border border-blue-500 rounded-full flex items-center justify-center text-[2cqw] mb-[1cqw]">📘</div>
-<p class="font-bold text-[1.5cqw] text-blue-300 m-0">진리</p>
-<p class="text-[1.2cqw] text-slate-400 m-0">무엇을 믿는가</p>
-</div>
-<div class="text-center">
-<div class="w-[5cqw] h-[5cqw] mx-auto bg-green-900/30 border border-green-500 rounded-full flex items-center justify-center text-[2cqw] mb-[1cqw]">👑</div>
-<p class="font-bold text-[1.5cqw] text-green-300 m-0">하나님 중심</p>
-<p class="text-[1.2cqw] text-slate-400 m-0">누구를 예배하는가</p>
-</div>
-<div class="text-center">
-<div class="w-[5cqw] h-[5cqw] mx-auto bg-purple-900/30 border border-purple-500 rounded-full flex items-center justify-center text-[2cqw] mb-[1cqw]">✝️</div>
-<p class="font-bold text-[1.5cqw] text-purple-300 m-0">복음</p>
-<p class="text-[1.2cqw] text-slate-400 m-0">구원이 중심인가</p>
-</div>
-<div class="text-center">
-<div class="w-[5cqw] h-[5cqw] mx-auto bg-rose-900/30 border border-rose-500 rounded-full flex items-center justify-center text-[2cqw] mb-[1cqw]">❤️</div>
-<p class="font-bold text-[1.5cqw] text-rose-300 m-0">정서</p>
-<p class="text-[1.2cqw] text-slate-400 m-0">사랑하고 경외하는가</p>
-</div>
-</div>
-</div>
-</div>
+<div class="w-full max-w-[58cqw] mx-auto flex flex-col justify-center items-center my-auto">
+    <div class="text-center mb-[1.2cqw] w-full">
+        <span class="tag tag-blue mb-[0.4cqw]">REFORMED BALANCE</span>
+        <h2 class="text-[2.1cqw] font-extrabold text-white text-center m-0 justify-center">피해야 할 극단과 개혁주의적 균형</h2>
+    </div>
+    <div class="grid grid-cols-3 gap-[1cqw] w-full mb-[1cqw]">
+        <div class="bento-card bg-slate-800/80 border-t-[0.3cqw] border-t-rose-500 py-[1cqw] text-center justify-center">
+            <h3 class="text-rose-400 text-[1.2cqw] mb-[0.3cqw]">⚠️ 감정주의</h3>
+            <p class="text-[0.95cqw] text-slate-300 m-0">감정이 진리의 기준 (감동적=최고)</p>
+        </div>
+        <div class="bento-card bg-slate-800/80 border-t-[0.3cqw] border-t-slate-500 py-[1cqw] text-center justify-center">
+            <h3 class="text-slate-300 text-[1.2cqw] mb-[0.3cqw]">⚠️ 반감정주의</h3>
+            <p class="text-[0.95cqw] text-slate-300 m-0">성경적 정서 억압 (감성적=위험)</p>
+        </div>
+        <div class="bento-card bg-slate-800/80 border-t-[0.3cqw] border-t-blue-500 py-[1cqw] text-center justify-center">
+            <h3 class="text-blue-400 text-[1.2cqw] mb-[0.3cqw]">⚠️ 교리주의</h3>
+            <p class="text-[0.95cqw] text-slate-300 m-0">어려운 단어 만능 (신학용어=최고)</p>
+        </div>
+    </div>
+    <div class="w-full bento-card border border-slate-700 justify-center items-center py-[1.4cqw]">
+        <h3 class="text-center text-[1.4cqw] text-white mb-[1.2cqw]">⚖️ 개혁주의적 찬양의 4요소</h3>
+        <div class="grid grid-cols-4 gap-[1cqw] w-full px-[1cqw]">
+            <div class="text-center">
+                <div class="w-[3.5cqw] h-[3.5cqw] mx-auto bg-blue-900/30 border border-blue-500 rounded-full flex items-center justify-center text-[1.6cqw] mb-[0.6cqw]">📘</div>
+                <p class="font-bold text-[1.15cqw] text-blue-300 m-0">진리</p>
+                <p class="text-[0.9cqw] text-slate-400 m-0">무엇을 믿는가</p>
+            </div>
+            <div class="text-center">
+                <div class="w-[3.5cqw] h-[3.5cqw] mx-auto bg-green-900/30 border border-green-500 rounded-full flex items-center justify-center text-[1.6cqw] mb-[0.6cqw]">👑</div>
+                <p class="font-bold text-[1.15cqw] text-green-300 m-0">하나님 중심</p>
+                <p class="text-[0.9cqw] text-slate-400 m-0">누구를 예배하는가</p>
+            </div>
+            <div class="text-center">
+                <div class="w-[3.5cqw] h-[3.5cqw] mx-auto bg-purple-900/30 border border-purple-500 rounded-full flex items-center justify-center text-[1.6cqw] mb-[0.6cqw]">✝️</div>
+                <p class="font-bold text-[1.15cqw] text-purple-300 m-0">복음</p>
+                <p class="text-[0.9cqw] text-slate-400 m-0">구원이 중심인가</p>
+            </div>
+            <div class="text-center">
+                <div class="w-[3.5cqw] h-[3.5cqw] mx-auto bg-rose-900/30 border border-rose-500 rounded-full flex items-center justify-center text-[1.6cqw] mb-[0.6cqw]">❤️</div>
+                <p class="font-bold text-[1.15cqw] text-rose-300 m-0">정서</p>
+                <p class="text-[0.9cqw] text-slate-400 m-0">사랑하고 경외하는가</p>
+            </div>
+        </div>
+    </div>
 </div>
 </div>
 <!-- [WEEK 2 - SLIDE 24] -->
 <div class="slide" data-week="week2">
-<h2>인도자로서의 실제 적용 &amp; 태도</h2>
-<div class="flex-center-all" style="height: calc(100% - 6cqw);">
-<div class="grid-auto-height grid-cols-2 gap-[2cqw]">
-<div class="bento-card justify-between">
-<div>
-<h3 class="text-blue-400 mb-[1.5cqw]">🛠 선곡 시 실천 팁</h3>
-<ol class="list-decimal pl-[2cqw] space-y-[1cqw] text-[1.4cqw] text-slate-300 m-0">
-<li>가사를 꼼꼼히 읽고 성경적 근거 확인.</li>
-<li>하나님, 죄, 구원이 어떻게 이해되는지 파악.</li>
-<li>회중이 이 곡으로 무엇을 고백하게 되는가 고민.</li>
-<li>체험을 하나님의 임재로 동일시하는 요소 점검.</li>
-</ol>
-</div>
-<div class="mt-[2cqw] bg-blue-900/20 p-[1.5cqw] rounded border border-blue-500/30">
-<p class="text-[1.3cqw] font-bold text-blue-300 m-0 text-center">필요시 찬양 전 짧은 성경적 멘트로 가이드합니다.</p>
-</div>
-</div>
-<div class="bento-card justify-center items-center text-center bg-gradient-to-b from-slate-800 to-slate-900 border border-slate-700 relative overflow-hidden py-[3cqw]">
-<div class="absolute inset-0 flex items-center justify-center opacity-5 text-[15cqw] pointer-events-none">🎤</div>
-<h3 class="text-purple-400 text-[2cqw] mb-[2cqw] z-10">인도자의 참된 태도</h3>
-<div class="z-10 mb-[2cqw]">
-<p class="text-rose-400 text-[1.5cqw] m-0 line-through font-bold">"오늘 모두 울게/뜨겁게 만들자"</p>
-<p class="text-[1.3cqw] text-slate-400 mt-[0.5cqw] m-0">분위기를 조종하는 것이 목적이 아닙니다.</p>
-</div>
-<div class="z-10 w-[90%]">
-<p class="text-[1.7cqw] font-bold text-white leading-tight bg-slate-800 p-[1.5cqw] rounded border border-slate-600 m-0">
-                                회중이 말씀을 듣고,<br/>그 말씀에 합당하게 반응하도록 돕는 것.
-                            </p>
-<p class="text-[1.4cqw] text-purple-300 mt-[1.5cqw] m-0 font-semibold">
-                                인도자는 분위기 메이커가 아니라<br/><b>진리를 전달하는 사람</b>이어야 합니다.
-                            </p>
-</div>
-</div>
-</div>
+<div class="w-full max-w-[58cqw] mx-auto flex flex-col justify-center items-center my-auto">
+    <div class="text-center mb-[1.2cqw] w-full">
+        <span class="tag tag-blue mb-[0.4cqw]">PRACTICAL APPLICATION</span>
+        <h2 class="text-[2.1cqw] font-extrabold text-white text-center m-0 justify-center">인도자로서의 실제 적용 &amp; 태도</h2>
+    </div>
+    <div class="grid grid-cols-2 gap-[1.2cqw] w-full">
+        <div class="bento-card justify-between p-[1.4cqw] text-left">
+            <div>
+                <h3 class="text-blue-400 mb-[0.8cqw] text-[1.3cqw]">🛠 선곡 시 실천 팁</h3>
+                <ol class="list-decimal pl-[1.5cqw] space-y-[0.6cqw] text-[1.05cqw] text-slate-300 m-0">
+                    <li>가사를 꼼끔히 읽고 성경적 근거 확인.</li>
+                    <li>하나님, 죄, 구원이 어떻게 이해되는지 파악.</li>
+                    <li>회중이 이 곡으로 무엇을 고백하게 되는가 고민.</li>
+                    <li>체험을 하나님의 임재로 동일시하는 요소 점검.</li>
+                </ol>
+            </div>
+            <div class="mt-[1cqw] bg-blue-900/20 p-[0.8cqw] rounded border border-blue-500/30">
+                <p class="text-[0.95cqw] font-bold text-blue-300 m-0 text-center">필요시 찬양 전 짧은 성경적 멘트로 가이드합니다.</p>
+            </div>
+        </div>
+        <div class="bento-card justify-center items-center text-center bg-gradient-to-b from-slate-800 to-slate-900 border border-slate-700 relative overflow-hidden p-[1.4cqw]">
+            <h3 class="text-purple-400 text-[1.4cqw] mb-[0.8cqw]">인도자의 참된 태도</h3>
+            <div class="mb-[0.8cqw]">
+                <p class="text-rose-400 text-[1.15cqw] m-0 line-through font-bold">"오늘 모두 울게/뜨겁게 만들자"</p>
+                <p class="text-[0.95cqw] text-slate-400 mt-[0.3cqw] m-0">분위기를 조종하는 것이 목적이 아닙니다.</p>
+            </div>
+            <div class="w-full">
+                <p class="text-[1.2cqw] font-bold text-white leading-snug bg-slate-800 p-[0.8cqw] rounded border border-slate-600 m-0">
+                    회중이 말씀을 듣고,<br>그 말씀에 합당하게 반응하도록 돕는 것.
+                </p>
+                <p class="text-[1.05cqw] text-purple-300 mt-[0.8cqw] m-0 font-semibold">
+                    인도자는 분위기 메이커가 아니라 <b>진리를 전달하는 사람</b>이어야 합니다.
+                </p>
+            </div>
+        </div>
+    </div>
 </div>
 </div>
 <!-- [WEEK 2 - SLIDE 25] -->
 <div class="slide" data-week="week2">
-<h2>마지막 주의사항 및 실천 과제</h2>
-<div class="flex-center-all" style="height: calc(100% - 6cqw);">
-<div class="grid-auto-height grid-cols-[1fr_2fr] gap-[2cqw]">
-<div class="bento-card border-l-[0.4cqw] border-l-rose-500 justify-center">
-<h3 class="text-[1.6cqw] text-rose-400 mb-[1.5cqw]">🚨 7대 주의사항</h3>
-<ul class="space-y-[0.8cqw] text-[1.3cqw] pl-[1.5cqw] text-slate-300 list-disc m-0">
-<li>아무 곡에나 신사도 라벨 금지</li>
-<li>감정적 = 비성경적 단정 금지</li>
-<li>현대 음악 = 세속적 판단 금지</li>
-<li>감동 = 성령 역사 단정 금지</li>
-<li>인간적 위로 자체 배척 금지</li>
-<li>단어 유무로 전체 평가 금지</li>
-<li>가사와 단체 배경 구별</li>
-</ul>
-</div>
-<div class="bento-card justify-center">
-<h3 class="text-[1.8cqw] text-blue-400 mb-[1cqw]">📝 과제: CCM 한 곡 분석 후 문장 완성</h3>
-<p class="text-[1.4cqw] text-slate-400 mb-[2cqw] m-0">곡을 선정한 후 7가지 질문을 통해 신학을 평가하고 아래를 완성합니다.</p>
-<div class="space-y-[1.2cqw] mt-[1.5cqw]">
-<div class="bg-slate-800 p-[1.2cqw] rounded border-l-[0.3cqw] border-blue-500">
-<p class="text-[1.4cqw] font-bold text-white m-0">"이 찬양의 가장 좋은 점은 <span class="text-blue-400 border-b border-blue-400 px-[2cqw]"></span> 이다."</p>
-</div>
-<div class="bg-slate-800 p-[1.2cqw] rounded border-l-[0.3cqw] border-blue-500">
-<p class="text-[1.4cqw] font-bold text-white m-0">"보완할 부분은 <span class="text-blue-400 border-b border-blue-400 px-[2cqw]"></span> 이다."</p>
-</div>
-<div class="bg-slate-800 p-[1.2cqw] rounded border-l-[0.3cqw] border-blue-500">
-<p class="text-[1.4cqw] font-bold text-white m-0">"함께 읽을 말씀은 <span class="text-blue-400 border-b border-blue-400 px-[2cqw]"></span> 이다."</p>
-</div>
-</div>
-</div>
-</div>
+<div class="w-full max-w-[58cqw] mx-auto flex flex-col justify-center items-center my-auto">
+    <div class="text-center mb-[1.2cqw] w-full">
+        <span class="tag tag-rose mb-[0.4cqw]">CAUTION & ASSIGNMENT</span>
+        <h2 class="text-[2.1cqw] font-extrabold text-white text-center m-0 justify-center">마지막 주의사항 및 실천 과제</h2>
+    </div>
+    <div class="grid grid-cols-[1fr_2fr] gap-[1.2cqw] w-full">
+        <div class="bento-card border-l-[0.3cqw] border-l-rose-500 justify-center p-[1.2cqw] text-left">
+            <h3 class="text-[1.25cqw] text-rose-400 mb-[0.8cqw]">🚨 7대 주의사항</h3>
+            <ul class="space-y-[0.4cqw] text-[0.95cqw] pl-[1.2cqw] text-slate-300 list-disc m-0">
+                <li>아무 곡에나 신사도 라벨 금지</li>
+                <li>감정적 = 비성경적 단정 금지</li>
+                <li>현대 음악 = 세속적 판단 금지</li>
+                <li>감동 = 성령 역사 단정 금지</li>
+                <li>인간적 위로 자체 배척 금지</li>
+                <li>단어 유무로 전체 평가 금지</li>
+                <li>가사와 단체 배경 구별</li>
+            </ul>
+        </div>
+        <div class="bento-card justify-center p-[1.2cqw] text-left">
+            <h3 class="text-[1.3cqw] text-blue-400 mb-[0.6cqw]">📝 과제: CCM 한 곡 분석 후 문장 완성</h3>
+            <p class="text-[1cqw] text-slate-400 mb-[1cqw] m-0">곡을 선정한 후 7가지 질문을 통해 신학을 평가하고 아래를 완성합니다.</p>
+            <div class="space-y-[0.8cqw]">
+                <div class="bg-slate-800 p-[0.8cqw] rounded border-l-[0.25cqw] border-blue-500">
+                    <p class="text-[1.05cqw] font-bold text-white m-0">"이 찬양의 가장 좋은 점은 <span class="text-blue-400 border-b border-blue-400 px-[1.5cqw]"></span> 이다."</p>
+                </div>
+                <div class="bg-slate-800 p-[0.8cqw] rounded border-l-[0.25cqw] border-blue-500">
+                    <p class="text-[1.05cqw] font-bold text-white m-0">"보완할 부분은 <span class="text-blue-400 border-b border-blue-400 px-[1.5cqw]"></span> 이다."</p>
+                </div>
+                <div class="bg-slate-800 p-[0.8cqw] rounded border-l-[0.25cqw] border-blue-500">
+                    <p class="text-[1.05cqw] font-bold text-white m-0">"함께 읽을 말씀은 <span class="text-blue-400 border-b border-blue-400 px-[1.5cqw]"></span> 이다."</p>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 </div>
 <!-- [WEEK 2 - SLIDE 26] -->
 <div class="slide" data-week="week2" style="align-items: center; justify-content: center;">
-<div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-blue-900/20 via-slate-900 to-black z-0"></div>
-<h2 class="relative z-10 text-white mb-[3cqw] border-none">최종 결론: 우리가 지향해야 할 찬양</h2>
-<div class="bento-card max-w-[80%] z-10 p-[4cqw] text-center border border-slate-600 bg-slate-800/80 shadow-2xl">
-<p class="text-[2.2cqw] font-bold text-white mb-[2cqw] leading-tight m-0">
-                    "가장 중요한 것은 사람들이 얼마나 울었는지가 아닙니다.<br/>
-<span class="text-blue-400">그 찬양을 통해 '누구를 바라보았는지'가 중요합니다.</span>"
-                </p>
-<div class="grid grid-cols-2 gap-[1.5cqw] mt-[4cqw]">
-<div class="bg-slate-900/50 p-[2cqw] rounded font-bold text-[1.8cqw] text-slate-300 border border-slate-700 flex items-center justify-center">
-                        나의 <span class="text-rose-400 mx-[0.5cqw]">감정</span>이 아니라 하나님
-                    </div>
-<div class="bg-slate-900/50 p-[2cqw] rounded font-bold text-[1.8cqw] text-slate-300 border border-slate-700 flex items-center justify-center">
-<span class="text-purple-400 mr-[0.5cqw]">체험</span>이 아니라 말씀
-                    </div>
-<div class="bg-slate-900/50 p-[2cqw] rounded font-bold text-[1.8cqw] text-slate-300 border border-slate-700 flex items-center justify-center">
-                        나의 <span class="text-blue-400 mx-[0.5cqw]">영광</span>이 아니라 그리스도
-                    </div>
-<div class="bg-slate-900/50 p-[2cqw] rounded font-bold text-[1.8cqw] text-slate-300 border border-slate-700 flex items-center justify-center">
-                        나의 만족이 아니라 하나님께 드리는 <span class="text-green-400 ml-[0.5cqw]">예배</span>
-</div>
-</div>
+<div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-blue-900/20 via-slate-900 to-black z-0 pointer-events-none"></div>
+<div class="w-full max-w-[58cqw] mx-auto flex flex-col justify-center items-center my-auto z-10">
+    <div class="text-center mb-[1.2cqw] w-full">
+        <span class="tag tag-blue mb-[0.4cqw]">FINAL CONCLUSION</span>
+        <h2 class="text-[2.1cqw] font-extrabold text-white text-center m-0 justify-center">최종 결론: 우리가 지향해야 할 찬양</h2>
+    </div>
+    <div class="bento-card w-full p-[1.8cqw] text-center border border-slate-600 bg-slate-800/90 shadow-2xl">
+        <p class="text-[1.5cqw] font-bold text-white mb-[1.4cqw] leading-snug m-0">
+            "가장 중요한 것은 사람들이 얼마나 울었는지가 아닙니다.<br>
+            <span class="shimmer-gold font-bold">그 찬양을 통해 '누구를 바라보았는지'가 중요합니다.</span>"
+        </p>
+        <div class="grid grid-cols-2 gap-[1cqw] mt-[1.2cqw]">
+            <div class="bg-slate-900/70 p-[1cqw] rounded font-bold text-[1.2cqw] text-slate-300 border border-slate-700 flex items-center justify-center">
+                나의 <span class="text-rose-400 mx-[0.4cqw]">감정</span>이 아니라 하나님
+            </div>
+            <div class="bg-slate-900/70 p-[1cqw] rounded font-bold text-[1.2cqw] text-slate-300 border border-slate-700 flex items-center justify-center">
+                <span class="text-purple-400 mr-[0.4cqw]">체험</span>이 아니라 말씀
+            </div>
+            <div class="bg-slate-900/70 p-[1cqw] rounded font-bold text-[1.2cqw] text-slate-300 border border-slate-700 flex items-center justify-center">
+                나의 <span class="text-blue-400 mx-[0.4cqw]">영광</span>이 아니라 그리스도
+            </div>
+            <div class="bg-slate-900/70 p-[1cqw] rounded font-bold text-[1.2cqw] text-slate-300 border border-slate-700 flex items-center justify-center">
+                나의 만족이 아니라 하나님께 드리는 <span class="text-green-400 ml-[0.4cqw]">예배</span>
+            </div>
+        </div>
+    </div>
 </div>
 </div>
 <!-- [WEEK 3 - SLIDE 27] -->
